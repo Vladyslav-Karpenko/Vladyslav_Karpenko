@@ -33,7 +33,7 @@
         .nav_menu-link {
           color: $secondary-color;
 
-          filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
+          // filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
         }
       }
     }
@@ -49,6 +49,22 @@
       filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
       font-size: larger;
       cursor: pointer;
+      margin: 0 15px;
     }
+  }
+}
+
+@media screen and (width <= 320px) {
+  .header-page {
+    // grid-template-columns: 2fr 3fr 2fr;
+  }
+  .nav_menu-item {
+    // display: none;
+  }
+}
+
+@media screen and (width <= 768px) {
+  .nav_menu-list {
+    flex-direction: column;
   }
 }

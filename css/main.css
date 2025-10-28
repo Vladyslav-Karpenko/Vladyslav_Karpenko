@@ -31,10 +31,10 @@ ul {
 }
 
 body {
-  display: grid;
   grid-template-rows: 1fr 8fr 1fr;
   font-family: "Rajdhani", sans-serif;
-  height: 100vh;
+  font-size: 16px;
+  height: 100%;
   background: linear-gradient(135deg, #1a1a1a, #000000);
   margin-left: 5%;
   margin-right: 5%;
@@ -103,7 +103,6 @@ body {
 }
 .header-page .nav_menu .nav_menu-list .nav_menu-item .nav_menu-link {
   color: #00ffff;
-  filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
 }
 .header-page .header-btn {
   display: flex;
@@ -117,6 +116,21 @@ body {
   filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
   font-size: larger;
   cursor: pointer;
+  margin: 0 15px;
+}
+
+@media screen and (width <= 768px) {
+  .nav_menu-list {
+    flex-direction: column;
+  }
+}
+li {
+  color: #00ffff;
+  filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
+}
+
+li img {
+  height: 50px;
 }
 
 .main-content {
@@ -125,6 +139,7 @@ body {
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
+  margin: 15px auto;
 }
 .main-content .main-content_card-about {
   display: flex;
@@ -135,6 +150,7 @@ body {
   width: 350px;
   height: 500px;
   text-align: center;
+  margin: 15px auto;
 }
 .main-content .main-content_card-about .main-content_photo {
   width: 200px;
@@ -151,4 +167,24 @@ body {
   margin: 15px 10px;
   font-size: 14px;
   color: #ffffff;
+}
+.main-content .container-skills {
+  display: grid;
+  grid-template-rows: 1fr 5fr;
+}
+.main-content .container-skills .container-skills_title {
+  margin: 15px 0;
+  font-weight: 500;
+  filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
+}
+.main-content .container-skills .container-skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.main-content .container-skills .container-skills-list .container-skills_item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
 }
