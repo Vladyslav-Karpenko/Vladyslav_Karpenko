@@ -37,12 +37,12 @@ li img {
     }
     .main-content_card-title {
       margin-top: 15px;
-      font-weight: 500;
+      font-weight: 400;
       filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
     }
     .main-content_card-text {
-      margin: 15px 10px;
-      font-size: 14px;
+      margin: 15px 15px;
+      font-size: 15px;
       color: $text-color;
     }
   }
@@ -67,5 +67,3 @@ li img {
     }
   }
 }
-
-
