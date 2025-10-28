@@ -93,6 +93,8 @@ body {
 }
 .header-page .nav_menu {
   display: grid;
+  z-index: 0;
+  margin: 3px 10px;
 }
 .header-page .nav_menu .nav_menu-list {
   display: flex;
