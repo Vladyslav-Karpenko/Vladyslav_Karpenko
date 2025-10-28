@@ -1,0 +1,52 @@
+@use "variable" as *;
+
+.header-logo {
+  filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
+}
+.header-page {
+  display: grid;
+  grid-template-columns: 2fr 8fr 2fr;
+  padding-top: 10px;
+
+  height: 15vh;
+  .header-logo {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    .header-logo_title {
+      font-weight: 500;
+    }
+    .header-logo_title-rank {
+      color: $secondary-color;
+    }
+  }
+  .nav_menu {
+    display: grid;
+    .nav_menu-list {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .nav_menu-item {
+        .nav_menu-link {
+          color: $secondary-color;
+
+          filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
+        }
+      }
+    }
+  }
+  .header-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .header-btn_contact {
+      height: 100px;
+      width: 200px;
+      border: 1px solid #00ffff;
+      filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
+      font-size: larger;
+      cursor: pointer;
+    }
+  }
+}

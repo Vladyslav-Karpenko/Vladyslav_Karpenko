@@ -1,0 +1,24 @@
+$primary-color: #ff00ff;
+$secondary-color: #00ffff;
+$background-gradient: linear-gradient(135deg, #1a1a1a, #000000);
+$glass-bg: rgba(255, 255, 255, 0.1);
+$glass-border: rgba(255, 255, 255, 0.2);
+$text-color: #ffffff;
+$font-main: "Rajdhani", sans-serif;
+
+.glass {
+  background: $glass-bg;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid $glass-border;
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+.primary-font {
+  color: $primary-color;
+  font-weight: 400;
+}
+.secondary-font {
+  color: $secondary-color;
+  font-weight: 300;
+}

@@ -1,0 +1,20 @@
+@use "../variable" as *;
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+body {
+  display: grid;
+  grid-template-rows: 1fr 8fr 1fr;
+  font-family: $font-main;
+  height: 100vh;
+  background: $background-gradient;
+  margin-left: 5%;
+  margin-right: 5%;
+}

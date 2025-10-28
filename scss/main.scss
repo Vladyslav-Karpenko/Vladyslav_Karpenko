@@ -1,0 +1,42 @@
+@use "./base/reset";
+@use "./base/typography";
+@use "./components/buttons";
+@use "variable" as *;
+@use "header";
+@use "footer";
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  .main-content_card-about {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 500px;
+    text-align: center;
+
+    .main-content_photo {
+      width: 200px;
+      margin: 10px;
+      border-radius: 50%;
+      border: 0.1px solid $secondary-color;
+    }
+    .main-content_card-title {
+      margin-top: 15px;
+      font-weight: 500;
+
+      filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
+    }
+    .main-content_card-text {
+      margin: 15px 10px;
+      font-size: 14px;
+      color: $text-color;
+    }
+  }
+}
