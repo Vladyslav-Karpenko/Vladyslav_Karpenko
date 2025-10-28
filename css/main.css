@@ -31,7 +31,6 @@ ul {
 }
 
 body {
-  grid-template-rows: 1fr 8fr 1fr;
   font-family: "Rajdhani", sans-serif;
   font-size: 16px;
   height: 100%;
@@ -122,6 +121,13 @@ body {
 @media screen and (width <= 768px) {
   .nav_menu-list {
     flex-direction: column;
+    font-size: 14px;
+  }
+}
+@media screen and (width <= 320px) {
+  .nav_menu-list {
+    font-size: 8px;
+    color: black;
   }
 }
 li {
@@ -144,7 +150,6 @@ li img {
 .main-content .main-content_card-about {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 350px;
@@ -187,4 +192,7 @@ li img {
   justify-content: start;
   align-items: center;
   padding: 10px;
+}
+.main-content .container-skills .container-skills-list .container-skills_item img {
+  margin-right: 15px;
 }

@@ -21,7 +21,7 @@ li img {
   .main-content_card-about {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 350px;
@@ -63,6 +63,9 @@ li img {
         justify-content: start;
         align-items: center;
         padding: 10px;
+        img {
+          margin-right: 15px;
+        }
       }
     }
   }
