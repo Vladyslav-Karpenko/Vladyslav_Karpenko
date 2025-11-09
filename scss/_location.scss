@@ -1,0 +1,10 @@
+.location_container {
+  display: flex;
+  justify-content: center;
+  margin: 25px auto;
+  padding: 25px;
+
+  iframe {
+    border-radius: 20px;
+  }
+}

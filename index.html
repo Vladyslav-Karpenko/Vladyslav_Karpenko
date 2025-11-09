@@ -11,93 +11,244 @@
       href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=call,map_pin_review"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
-    <header class="header-page">
-      <a href="index.html" class="header-logo">
-        <h1 class="header-logo_title primary-font">Vladyslav <br />Karpenko</h1>
-        <p class="header-logo_title-rank">Full Stack Developer</p>
-      </a>
-      <div class="nav_menu">
-        <ul class="nav_menu-list glass">
-          <li class="nav_menu-item">
-            <a class="nav_menu-link" href="#">Home</a>
+    <div class="intro" id="intro">
+      <div class="intro-overlay"></div>
+      <button id="enterBtn">Enter</button>
+      <audio id="bgMusic" src="files/nomyn.mp3"></audio>
+    </div>
+    <div id="content" class="hidden">
+      <header class="header-page">
+        <a href="index.html" class="header-logo animate__animated animate__zoomIn">
+          <h1 class="header-logo_title primary-font animate__animated animate__zoomIn">
+            Vladyslav <br />Karpenko
+          </h1>
+          <p class="header-logo_title-rank">Full Stack Developer</p>
+        </a>
+        <div class="nav_menu animate__animated animate__zoomIn">
+          <ul class="nav_menu-list glass">
+            <li class="nav_menu-item">
+              <a class="nav_menu-link nav_menu-link--active" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav_menu-item">
+              <a class="nav_menu-link" href="#about_me">About me</a>
+            </li>
+            <li class="nav_menu-item">
+              <a class="nav_menu-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav_menu-item">
+              <a class="nav_menu-link" href="#projects">My projects</a>
+            </li>
+            <li class="nav_menu-item">
+              <a class="nav_menu-link" href="location.html">
+                <span class="material-symbols-outlined"> map_pin_review </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="header_buttons animate__animated animate__zoomIn">
+          <a href="tel:+420735851069" class="header-btn">
+            <button
+              type="button"
+              class="header-btn_contact secondary-font glass material-symbols-outlined"
+            >
+              call
+            </button>
+          </a>
+          <a href="files/CV.pdf" class="header-btn">
+            <button type="button" class="header-btn_cv secondary-font glass">
+              Download CV
+            </button>
+          </a>
+        </div>
+      </header>
+      <main class="main-content">
+        <div
+          class="main-content_card-about glass animate__animated animate__zoomIn"
+        >
+          <img
+            class="main-content_photo glass"
+            src="images/face.png"
+            alt="Vladyslav Karpenko"
+          />
+          <h1 class="main-content_card-title primary-font" id="about_me">
+            About Me
+          </h1>
+          <p class="main-content_card-text secondary-font">
+            Originally from Mykolaiv, Ukraine, now based in Prague. I hold a
+            Master’s in Computer Systems and Networks from Kyiv University of
+            Modern Technologies. Currently studying Full-Stack Development at
+            Step IT Academy and enhancing my Python and web development skills
+            at GoIT. Focused on building modern, practical web applications.
+          </p>
+        </div>
+        <div class="container-skills">
+          <h2 class="container-skills_title primary-font" id="skills">
+            Skills
+          </h2>
+          <ul class="container-skills-list">
+            <li
+              class="container-skills_item animate__animated animate__zoomIn glass"
+            >
+              <img
+                class="container-skills_icon"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE0klEQVR4nO1abYiVRRQ+67VW0NQNwTVKyawUPyAqaKUwQ/3hR+ZHKWhR/ihjJUGFFExCSHNTBElISlijDwp/aEVGLlFq0tdqoX9MFz9Wo7WINDPNlSfm3ufdO3feee++M3NvvYED8+c55zxnztyZM2fmvSLXWtYbMFWAywIgo/2yADPTBLIqA4NFN31VmkCeofLrkrUGvMGxPZ1G+REq75SsNeADjm16GuUGKn8lWWvA1xzbfWmUb6PycclaA05wbEPTKPeh8kXJWgMucmy90xpcoMENkpUG9OWYLrgYtdFomIHXC3BEgN+q3I8KcLPhexjH1OYSyH4ajTXwcf/iWTHO8D2W+H6XQHbQaIaBjyB+TIC6KvVj9DHC8D2D+A6XQLbQaKGB1xH/XarVgHP00d/AnyX+mgvZamspANQIcImyWg2/rkK/xkCtnqpJKJ1WuwTSSKPNFtkpym7RsIMV3h/tFr+bKWt0CWQ2jbZbZN9Sdo+G/dK15MIz1q8CvGDxu50+ZrsE8gCN9lhkH1E2WcMOExsl1WrAXvq438XoDhodKVOBPqlhLcTGV2rcsQb8SB+3S+oG9EvMTsBLlD2vYW8Te1Sqn836uhpG2amXgT9HfIOGbajgRj8vwF2Gz16UXfKZgZM0Hmzgc4i/pWGTBPijgsE8ZvgcTPykTyDx7FTAHyT+qTtptz5bEsqTe4l/40MaZacpBj6c+Peh47b4PJRQnkwl/qEP6VYaL0goUzryF5yw3sfg/pncAwx8AfGtPoGsofHyMmVKaO/oSiZAToBOAa4I0MPwuZz6a3wCWUzjjRbZK7yzhHSU3PaKddZPFn8bKVvsE8hcGr/jbtwtd39yn9OwMcQOWvTfpWyOj7PxNG4pc2ia1WttSu47yX1UwyYkZsOgygEYSeNDZZad2dVZcmsK7iiF79WwebHzKZ7NRvoEMqBrQ8Zl6yn7S6tao/fiuQ7LtlhdA0tiFUNR1mHNZikD6SHA3wJczWeUUtkyEq/XsE3EdgrwsACDLJxqQ0+jjtJ9VZOti9VwxWx2lWMpzWYOwZwheb2BP078TQ1bZFlqp3iPeE97XNP7Is2+mdhTlpcbhZ/xC6JAcoAkYwx8IvFPjJmbLsDLAnymVavmHvpcgCbqFmcY2BW755RmswMhgUTkE53JC0tzOH89dTKPii3RUv3WhNoumrRdIYFsI8l8A48Orz8FWMs3p5wHf462a8kFS7U9n/i2kECaSLLEMts/GMvmLNf5rLJPrUpW0Gmmjc5x2JJYomzWFBLIUpKss8h6CvAQywe95ChcgNT+KbzGDGFvJGbWaW3kUFw9LX6ibLY0JJDoZ21OoTuUB+U+psukQlHJvhPgRQHudlje80ICiTbaxx6H6RMCvM+rq/ocsJuB3uSZcCY4jt6anVoDOGoFuD7AvtV6BDiSRIeR2pSj/Ym8/Y/WEkJ9CFHOeFRoz3/tLWSdfpUcs1ZRz6KPduMgzYWSN/B1Pnrzjbq6yX0hwIr884356JyOu4a2K8h1xVLiKN8NYUEkZ6bdln9HnOXmVpv8xm6+UU7jAPVZV72zJKP5TI7nN72ZXAanLQP6UoCV+ZKj0FcS6zR0T5NDcTm+IlYnsHK/1n88675NPSiULh992dV5815r8v9p/wCcr6/2DJxeBAAAAABJRU5ErkJggg=="
+                alt="html-5--v1"
+              />
+              HTML
+            </li>
+            <li
+              class="container-skills_item animate__animated animate__zoomIn glass"
+            >
+              <img
+                class="container-skills_icon"
+                src="data:image/png;base64,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"
+                alt="css3"
+              />CSS
+            </li>
+            <li
+              class="container-skills_item animate__animated animate__zoomIn glass"
+            >
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEeElEQVR4nO1aV4gUQRAtFTEnDOB9qHigH4oB8UNBEYyIOaJwKphBERU99cMMCh6ooGIWFAOY04cB0ykGDlFBBQVzwIhijk96+u1t3+7sbs/MDjsfNvRH19SrqVc9XV3duyL/W9QbMEiAHwIgov2H46MFkfkRcBYZ+nwbIhOpvFGi1oBN9G2CjfIAKh+WqDXgCH3rb6PckcpXJGoNuErfOtgo51P5gUStAQ/pW1Mb5epU/ipRa8AX+lbNFvCZgOoSlQbUoE+fvYAeEJTvAXPJJU0WZ3ieqRcH++SBywR19IBxdybT8/T9i0sSuuyFyCGCBnomYjtObys/Kfq64lCyg9Y+OZuhBk3KEZEOSVsAMJmyDdY+CbDEvhSwdDx5bLNmjrqUTku8EJlC0NoQidgUh+MN/bWUT/FCZChB+0InYm9/PzFDrDECdE5Kf7kncpGYTtYYAZoTdC9CRO4T08waI0Adgj5EiMhHYmpbYwQoJ8B3AivnnAhQmfrKp3L2RDT4CcGNQ85aas8oEGCRADtZqr8T4Hqp08oHrfvEGwkNLiG4fchEUvW/AlSkbnvKSvwQOU5wn5CIXHDWoA7YHgGWCjBGgH7UfWfo9qHsuB8iWwkeGwqR1HZaUPeOIRtH2RbPPARYRvC8UInoxNJUgHocd6HueUNnHmXL/BCZTvCqrBIBugsww4kucM04xD2l3jCO9xrYVZRN90NkJMG7s0wkVdcnP2Aqx2sM7B7KRvgh0pXgMwkL9DGjOVyAuh6IqBLjvfPJAOtYlqtSqHXCjCzmeIGBPUNZVz9EWhJ8O8m5eP/NvL84wOLuQd1bHK/neLKhc5uyln6INCD4jQuRWQKcNnZ/WBNRJYY+7a03rndUP8XnBzgebGDeUNbAD5HyjPgfY2NKdLaaAL0FWC3AXQGOpSQCjOZh6ncC+dcC7BKgjWuVq96tfVC48t6JaCMvaTTP1bn02EQisdn7KcBZAeYK0C7JOeAe9ZpznMfxS38ktJEbNNK2jHMqNepNqpEHIkh7VwY05KzFLuHqUN6W4xtBiJykkZ4cH3ZZ8HcEWClALwGqZiQSH1fhQi9yFnpZm8+NgrEnZSeDENlBI6MMWRPnWl8fPT8kOPCN5GemmRH17IRzJVsW+8m5bND3BXkGbhSf7whCpKg0S7k/r8DvvNDJOvr7T5/FynaVVpcL0E2ASineMZu6K4IQmUUjRZb6dblRqoLzqbOBxp8VC/BMgG3ODg3Uz0owrVp8WrdLrhpKP++CIEZiC+1ENn3zmXB6BDGShdQXsAE36UObIEZim9FbAVpl0z/L97fiu+Obsk9DFY3zgq5Q9S+rqlaqmU2f+b6atL2J74qX+LEyKYDxTizbXySkzlipMTvQbOmoF9LWT5eNcYu320W7l6oj6TTuGYn/jnjlZDd9b5z6Ek0Xmn2dnwfiV07msaBEgIXcnzzeYfkjpcrxIYzY8xSzVciIq8PTHAHOCfDLJeqbaatW+I4Hm60cR91vU5HVEVaRfsSuFvDgaET9f5PQ2z+HhgN4er6iEAAAAABJRU5ErkJggg=="
+                alt="javascript-logo"
+              />JavaScript
+            </li>
+            <li
+              class="container-skills_item animate__animated animate__zoomIn glass"
+            >
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFIklEQVR4nO2bz29VRRTHDwii9JUQpSSuLFI3JqJbxBYsof5MDI0bF8Y/QDFsAG00QqMoupLEjRujCzURQ0FjCP6MrogWsSiaqBExURCwgEpBbT5mOuf65rXvx8y90977yjvJTZu555w75/vmzZzvOfeJtKQlLWlJXgILBEpySQjMEVgjsFNgWOBPAfQ6K3BA4AWBWyZ0Z5XAeoFvnYCT63eB0SrjRwTukVkh8LoT2FGBpwVuFVjk6CzWsWcEfnL091ToNaXAdwKnBR4SuMxDf57AwwKnFISvBJZJ0wosFLgyhd21Al8qCMcElktTCDwg8JrA0gi+2gU+aR4Q4EGBcZ3wNwLXRFpBH6rPnwW6pJAC9wv8qxP9Rf8enrIS7Kf6pMBBgXN6HJr/BwU6avguFXslQL/APzrBgYmgbfBTQYANVY49Nx9Y31wgwN0CF3Vig854dRDMp2xB6tXV0KYJ0pDqjjcPCLBOYEwn9HyV+5NBWNLA3xbVPVNTtzAgwGqBv3QiO+voLdXMzuht8vC7V3W31dHJGQRYqRuYmcBLDXN32K+6vR6+b1Pdgw30cgIBbtYc3jz4VYG5HjZJvt/uoduuuucCj8gZAAFWaFprHviGV2pr7c6rzRIP3UWqO+rpe/JKuE6mReAGgRP6oN0C8wNsk5R2nYfuWtX9IMD/NIMA1zvJzbsClwfab1Lb/R6696muOV368geBCVJyTB2/L3BFCh/me/3blFyhduHkxUggdAbPtYrDZPkax22SVizfH3OAXOHcu1HgFYEnFIBYIIxkK7nBW+ro6yiFCegR+F59nnbGk40VDTwrCO1aRzC2u9JO9k6nbBWPgdmjywZbHkuCH2sAwkeaJfoQqOXOcX1H6CTnaOHSGG/MGnMV/7UA6GsAQiiB2qg6n4cVWmGVs5EsiBGzFwD2/1og9CtpavMmULbsnmzgK0MmuF2NnosTcQAAU0F4PBOBMiTN3n8qZIKfqdFqyQMAOzag4y9nIlB2pZh7B0ImeEKNrpb8ANin42szESizKuy9X30nN1+/UxemrUPjB0BSFl+ciUDZ/eOixjRPPOvy42qUJwAJ3S4FEKizNQD42x8AI+W09SrJD4AvdHyNh79e1R3O/hUwYs9NY9Qt+QEwqONDHv7eVt2tsTbBZ9Voh+QHQIcmOebeljq+Hvu/flBt0055DHY7zcww6hsLADve7zRa9upuX9Kr1/nkjc69MROhuQKH1HBD+kgzAlBurZ+pkwqPVg0+Uypcrvejx9GyGSJDC2vYmI1sm/KTP/SEMEFtrZmrVJKh29NOdigOr64opf9Qhw4bqtwT4TkuHX4zlqOPMxZEup38/r1JBZGbtEiS0N70p0/UgogRU1uzXdn0INhE5WTNo2rq0XcyVQEmekksEVMQyQICbFbbfR66SRNlc+AzprlRQgYQwsrifap7KMD/DHWJoFPgR33Qp16dHms3FtAY6VDd856+Z7w71BkMQixik3vwab8OsYhNwTrEXd4glHf3PR5+3/E4LQrzjkCXFwiVxObROv4G6hKbQgUfDkI2YlPI4MNByEJsChp8OAhpiE3Bg8+aJxTyqIu3EkqXzquy1VfCSKqXFSwJO9x8wSdiiijlAE7pG6KNy2u2jPWIUyMYad7X5ZlYwrudXf6oFlx7KkruZvOzxZIdk34wsWt2/KYI7nLSYfe6oNfk8eHwnn7RhYkOzSr9WYxpvh53Aj6uY9tn54+m6vch/V+3a0lLWtISiSv/Abccd/0DaX+mAAAAAElFTkSuQmCC"
+                alt="git"
+              />Git
+            </li>
+            <li
+              class="container-skills_item animate__animated animate__zoomIn glass"
+            >
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADOElEQVR4nO2ay29MURzHv4tiEpI2Udr6E7DRaLu2ERUsvBLSpXfLSjwSG2ssRKwpsRDxWHmltcDSu1FEbXQxLTpeoUj0I3fmN9zG7Z1zO/fOnZZfcpI59/we32/umXt+v3OO9F+ms0Cz4KDgsuC5YEgwas37/UJwRXBI0KaqE1gjeCAgYusTrKsGAjME3T5gw4ITgs2ChYIGQcZagz3bJDguyPrszgtmpknknAH5KOiMBAZqBFsF783HhUSxhgBZbQA8IEvK8LNYMGK+1saK0RHAdQveZf2VgkFr7RF97TBfNxJCGxo8Z8HrrT/om/OvI/qqN7tcQmhDgxdA/+lPnkiQvxSJtOcJFNqKsv1VTOIOnDoRHJurv4rLtCHiKqkSIb/q7hTc9a285TVXIgQ2D8MdW29qXEksEDyMBXx8RPA1LzltKuVsjuCZGbwUrBfUqhISRhhqBRsEA6bXn8ca4uyYKT4VzE0OdWDs0m/Ow1TA5ukenUipTvBV8FOwVJUW9ynYIhgzrAGzpZBSe856lIZE+WpBr+lvCRosFki74kfp9IEp1DVu+p2mfzposM8GW+JHWhLYgUizAdpM/3HQ4LANNsSPNPRN7Bd8t9jtjnaNpj8UNPjNBjMRwSwX3BS8K3OtORwhZsZsRuMhUtjWKQf8p/x0il5RZsKIRJtasMz0fwj2CuarUsLvqZUNGnxig62OznpMf1/8SJ3/7I/CPr+dpfyY/mfTr2wG4Im34VGIfUohC2KvXCTN+gFuhS2IxRRlzGktSYsItBrGLxMntF4i5po0pkGE/LZRv8U+UiqNLyoOWOpclzoR8rNlo+CVL42fXcqoKdLOemkQ8RZocK90YTW+1N0uuO3bUUyTSM6wbHMvdV0lKpGqFRJ6IxWXf46Iq0w5IkxwjjIFiQwGHj+kSCRnweeVTcQrAQr9kYTQhgK6Nu7ozd3u73MU2GO+riaE1ukw9EOZh6HNdirs+VoVK8YIIM76StauiMfTswS7zdbzcSZRrA6pjP/CwBvBSUGHYJGVpMULA432rMN03vrsuuNPPSY/zSZzheN+3raKL9Vcsl39rO9STdaeXTSd5rTh/hclKL8AE4eCH5/P8DMAAAAASUVORK5CYII="
+                alt="python--v1"
+              />Python
+            </li>
+          </ul>
+        </div>
+        <div class="container-projects" id="projects">
+          <h2 class="container-projects_title primary-font">My projects</h2>
+          <ul class="container-projects-list">
+            <li
+              class="container-projects_item animate__animated animate__zoomIn glass"
+            >
+              Project 1
+            </li>
+            <li
+              class="container-projects_item animate__animated animate__zoomIn glass"
+            >
+              Project 2
+            </li>
+            <li
+              class="container-projects_item animate__animated animate__zoomIn glass"
+            >
+              Project 3
+            </li>
+            <li
+              class="container-projects_item animate__animated animate__zoomIn glass"
+            >
+              Project 4
+            </li>
+            <li
+              class="container-projects_item animate__animated animate__zoomIn glass"
+            >
+              Project 5
+            </li>
+            <li
+              class="container-projects_item animate__animated animate__zoomIn glass"
+            >
+              Project 6
+            </li>
+          </ul>
+        </div>
+      </main>
+      <footer class="footer">
+        <h2 class="footer_title primary-font">
+          Need a quote for a project? Get in touch...
+        </h2>
+
+        <form class="footer_input">
+          <input
+            class="glass rajdhani-bold"
+            type="text"
+            placeholder="Your name"
+            required
+          />
+          <input
+            class="glass rajdhani-bold"
+            type="email"
+            name=""
+            id=""
+            placeholder="Your email"
+            required
+          />
+          <button class="footer_input-btn glass" type="submit">SEND</button>
+        </form>
+        <ul class="footer_items">
+          <li>© 2025 Viadyslav Karpenko</li>
+          <li>
+            <a href="https://github.com/Vladyslav-Karpenko"
+              ><img
+                width="50"
+                height="50"
+                src="https://img.icons8.com/ios/50/00ffff/github--v1.png"
+                alt="github--v1"
+            /></a>
           </li>
-          <li class="nav_menu-item">
-            <a class="nav_menu-link" href="#">About me</a>
+          <li>
+            <a href="https://www.linkedin.com/in/vladyslav-karpenko-9734a72b8/"
+              ><img
+                width="50"
+                height="50"
+                src="https://img.icons8.com/ios/50/00ffff/linkedin.png"
+                alt="linkedin"
+            /></a>
           </li>
-          <li class="nav_menu-item">
-            <a class="nav_menu-link" href="#">Skills</a>
+          <li>
+            <a href="mailto:vladyslav.karpenko@ukr.net">
+              <img
+                width="50"
+                height="50"
+                src="https://img.icons8.com/ios/50/00ffff/mail.png"
+                alt="mail"
+              />
+            </a>
           </li>
-          <!-- <li class="nav_menu-item">
-            <a class="nav_menu-link" href="#">Contact</a>
-          </li> -->
         </ul>
-      </div>
-      <a href="tel:+420735851069" class="header-btn">
-        <button type="button" class="header-btn_contact secondary-font glass">
-          Contact Me
-        </button>
-      </a>
-    </header>
-    <main class="main-content">
-      <div class="main-content_card-about glass">
-        <img
-          class="main-content_photo"
-          src="images/face.png"
-          alt="Vladyslav Karpenko"
-        />
-        <h2 class="main-content_card-title primary-font">About Me</h2>
-        <p class="main-content_card-text secondary-font">
-          Originally from Mykolaiv, Ukraine, currently living in Prague, Czech
-          Republic. I hold a Master’s degree in Computer Systems and Networks
-          from the Kyiv University of Modern Technologies. Currently studying
-          Full-Stack Development at Step IT Academy in Prague and improving
-          Python and modern web development skills through online courses at
-          GoIT. Focused on building practical web applications, learning
-          contemporary frameworks, and gaining hands-on project experience to
-          grow as a developer.
-        </p>
-      </div>
-      <div class="container-skills">
-        <h2 class="container-skills_title primary-font">Skills</h2>
-        <ul class="container-skills-list">
-          <li class="container-skills_item glass">
-            <img
-              class="container-skills_icon"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE0klEQVR4nO1abYiVRRQ+67VW0NQNwTVKyawUPyAqaKUwQ/3hR+ZHKWhR/ihjJUGFFExCSHNTBElISlijDwp/aEVGLlFq0tdqoX9MFz9Wo7WINDPNlSfm3ufdO3feee++M3NvvYED8+c55zxnztyZM2fmvSLXWtYbMFWAywIgo/2yADPTBLIqA4NFN31VmkCeofLrkrUGvMGxPZ1G+REq75SsNeADjm16GuUGKn8lWWvA1xzbfWmUb6PycclaA05wbEPTKPeh8kXJWgMucmy90xpcoMENkpUG9OWYLrgYtdFomIHXC3BEgN+q3I8KcLPhexjH1OYSyH4ajTXwcf/iWTHO8D2W+H6XQHbQaIaBjyB+TIC6KvVj9DHC8D2D+A6XQLbQaKGB1xH/XarVgHP00d/AnyX+mgvZamspANQIcImyWg2/rkK/xkCtnqpJKJ1WuwTSSKPNFtkpym7RsIMV3h/tFr+bKWt0CWQ2jbZbZN9Sdo+G/dK15MIz1q8CvGDxu50+ZrsE8gCN9lhkH1E2WcMOExsl1WrAXvq438XoDhodKVOBPqlhLcTGV2rcsQb8SB+3S+oG9EvMTsBLlD2vYW8Te1Sqn836uhpG2amXgT9HfIOGbajgRj8vwF2Gz16UXfKZgZM0Hmzgc4i/pWGTBPijgsE8ZvgcTPykTyDx7FTAHyT+qTtptz5bEsqTe4l/40MaZacpBj6c+Peh47b4PJRQnkwl/qEP6VYaL0goUzryF5yw3sfg/pncAwx8AfGtPoGsofHyMmVKaO/oSiZAToBOAa4I0MPwuZz6a3wCWUzjjRbZK7yzhHSU3PaKddZPFn8bKVvsE8hcGr/jbtwtd39yn9OwMcQOWvTfpWyOj7PxNG4pc2ia1WttSu47yX1UwyYkZsOgygEYSeNDZZad2dVZcmsK7iiF79WwebHzKZ7NRvoEMqBrQ8Zl6yn7S6tao/fiuQ7LtlhdA0tiFUNR1mHNZikD6SHA3wJczWeUUtkyEq/XsE3EdgrwsACDLJxqQ0+jjtJ9VZOti9VwxWx2lWMpzWYOwZwheb2BP078TQ1bZFlqp3iPeE97XNP7Is2+mdhTlpcbhZ/xC6JAcoAkYwx8IvFPjJmbLsDLAnymVavmHvpcgCbqFmcY2BW755RmswMhgUTkE53JC0tzOH89dTKPii3RUv3WhNoumrRdIYFsI8l8A48Orz8FWMs3p5wHf462a8kFS7U9n/i2kECaSLLEMts/GMvmLNf5rLJPrUpW0Gmmjc5x2JJYomzWFBLIUpKss8h6CvAQywe95ChcgNT+KbzGDGFvJGbWaW3kUFw9LX6ibLY0JJDoZ21OoTuUB+U+psukQlHJvhPgRQHudlje80ICiTbaxx6H6RMCvM+rq/ocsJuB3uSZcCY4jt6anVoDOGoFuD7AvtV6BDiSRIeR2pSj/Ym8/Y/WEkJ9CFHOeFRoz3/tLWSdfpUcs1ZRz6KPduMgzYWSN/B1Pnrzjbq6yX0hwIr884356JyOu4a2K8h1xVLiKN8NYUEkZ6bdln9HnOXmVpv8xm6+UU7jAPVZV72zJKP5TI7nN72ZXAanLQP6UoCV+ZKj0FcS6zR0T5NDcTm+IlYnsHK/1n88675NPSiULh992dV5815r8v9p/wCcr6/2DJxeBAAAAABJRU5ErkJggg=="
-              alt="html-5--v1"
-            />
-            HTML
-          </li>
-          <li class="container-skills_item glass">
-            <img
-              class="container-skills_icon"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGiUlEQVR4nO1baWxVRRQ+solEERRxxyIJBiVQWoWAigaN1oimat0Fo1FUIvJHgqSuIC6IMRiioOJCcIm7Voqi/KCAVCSoaBURZSmgEEVFxWBLPzNvvts377737sy97/Je2/RL7o/O+845M3PnzpxlKtKOdrSjHSaATgI8KMAWAdBGnm0CzBDgQLECmN4COry/nsddJmAbySOkrQAYIkCTALtcyLs5Ad2lrQDoKECjAPsE6GAjf8cJ2CjAp77faltp29cc0y/Bg1cAPkr5bky05jb9rBErgGfa8AR8YBm9KIFKkhsEqPH9tqwVttUIsIdjetYyelEC15H8qrQVAA9wTPe7kM8kOXUzac1Qb16P6RYXcp9m76mtAFjIMV3kemY28Mx0cB1bAdTuryfgVFeBjRToZ+GdX+CYoV6AMofx/Ez+sa4TsJQCoyy8TS3Av9/kENztoyfYyXUC5lP5DRbe7+T1knwDOJS2d1t4x5G3PYzyaRS6z8JbRd4Zkm8Ag2i7zsIbSt7qMMpvptDzFt5L5N0k+QYwmrarLbxy8t4Po/w8Ci2x8KaQN1PyDWA8bc+JhZcC4CQKbRC32d3fjwrRi322H+ZvlZY+TnX3Aj0ABzGBsDcwfgYOz+NJcInP9stsH5O1f5r3HHnjAnlpAHZQ8BgpJIAv2I9SX/tyto+0yC8ib3RYw6soOFwKCeA39uMIX3s924ss8l+SVxLW8BsUvEoKBeBg9kGFswcY7Z3p2Kins0XHTuo4KqzxmRScLIUCcAr7sM7XXsT2LRb5zvQCVWzTMazxCTTyVJS+G3pWxLABLvbpHMn2FRbbx0ePbIGLKbwwvHCKnlwHvzctjk8mbV6x2B5G3udROj6Ywt+EF07RowcSJ5Jpu0csvEvJezeKkR4U/qsFTsAc6h1v4d2e22cM/EEFh7WwCah2OtuTZb57ohpaSwWpbmjhJ6COegdZeC/kFqwBVVRQXsBNcFFA+a6HxfaH5F0YtfOzqWBiNAXNufpcJiA1kQH0ZPufDra/IndI1M5Pci8rxwxVnda2a33txWxf66DjV3J7R+3ElVTwpuQbwNW0/XoW/yS4zKUy2jqi/c9eEY7DkQC6CfAWHRdzCasOvJ0IscNAueCZki2uRxtwAnn1oeymADiaSnaKDcCtlm/5NqsOl/1HX3VR7VMs8sPJ+yyU3RSoCAz4l4q6SRCAu8ibkWVi5gXKZz+B/ImQ19h+jUX+MvLeCWU3DcB6KhrgaLDK1352xs3MnsuvyxjHq5qlSyY6Zy/QA/AxFQVXYICTyfvB136k8RlsoHc2OIN8dwGuEGCBkQRpSvNCga38rY+lPw+Rd7fkBDjm1IAujLsb02qKOnjZ7tsT1rFsPYG3Uvyb57cZvv8uRnwfXOUBXqSeG3MYvShF91LR9BCfy8AMv3VILFtgllGrMx81casT2dtsnxtwolM5THMXO61cK4DrqWiBA/c9ciscKtDnJL5Pnd0dk8gw2/V7+0mNA9e7GJX+uYUCmo0uc+B63101j6FkHi+3PqjTqMSoWc6PnEyNYLyvU/5NcwcI8LexrDcL8JgAp0Wwqzy5Mq4SLwMM7gHBwQ3Q1ahr5PgSECIDq/n9ErFD+r2BH1nNKbYUWsYyI+1FfN6jJuFppzR98qVtDj3ejEgOpijksh3BTc+7fus937MCPVCA/gLcyTsJjT7eGm6KpaHeJHA65Vc6ywTCtQqTXd48AfzHofk00NbEREY3KrQ/EWMQh+Y63NgYdKkTYJQAc3kc7uDmViHAITH19w72d3Ys+iR5YcLuC8QJvSeM4QRVhpB7kv2dFFdHzjVc2a4RdZwlwLWBx5Le+bsYf5ufi1tYq1ZRcs8ZFqmvWYIT76rZkoyeng3JGt0+Fl6n0lcoYez/CSPP5J0EvetXcU+w3/DS12FqaWdpbH6IEeyY5/F6bmoXOCU79GWKRca93UxPY1oGKFhn70RYrLO/W3196+usxxmqwqrPeM/L8p49HJx6U/0dLl+UcfLUcfgTN8QKa/1BOzjqc3yU9waa0hKoer+KXscIcayVcuku57I2O+IN6vKc//NEB0DjEisj3Tnaw3B9cmhfIVYAvTjYuRnOee9sd+ukXtaeLvOTMz3KWVwJ0TbkPKyOoQyjV2bw7jaxtlfOY64n95EnEoXY9AErL3Re4qJGzoFNIYDEIL03am5U2Z5/Wsay3h/Q8UEpM0Q13Ex3Mc83jRcf7AFXO9ohceF/Ha3AWJYwob4AAAAASUVORK5CYII="
-              alt="css3"
-            />CSS
-          </li>
-          <li class="container-skills_item glass">
-            <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEeElEQVR4nO1aV4gUQRAtFTEnDOB9qHigH4oB8UNBEYyIOaJwKphBERU99cMMCh6ooGIWFAOY04cB0ykGDlFBBQVzwIhijk96+u1t3+7sbs/MDjsfNvRH19SrqVc9XV3duyL/W9QbMEiAHwIgov2H46MFkfkRcBYZ+nwbIhOpvFGi1oBN9G2CjfIAKh+WqDXgCH3rb6PckcpXJGoNuErfOtgo51P5gUStAQ/pW1Mb5epU/ipRa8AX+lbNFvCZgOoSlQbUoE+fvYAeEJTvAXPJJU0WZ3ieqRcH++SBywR19IBxdybT8/T9i0sSuuyFyCGCBnomYjtObys/Kfq64lCyg9Y+OZuhBk3KEZEOSVsAMJmyDdY+CbDEvhSwdDx5bLNmjrqUTku8EJlC0NoQidgUh+MN/bWUT/FCZChB+0InYm9/PzFDrDECdE5Kf7kncpGYTtYYAZoTdC9CRO4T08waI0Adgj5EiMhHYmpbYwQoJ8B3AivnnAhQmfrKp3L2RDT4CcGNQ85aas8oEGCRADtZqr8T4Hqp08oHrfvEGwkNLiG4fchEUvW/AlSkbnvKSvwQOU5wn5CIXHDWoA7YHgGWCjBGgH7UfWfo9qHsuB8iWwkeGwqR1HZaUPeOIRtH2RbPPARYRvC8UInoxNJUgHocd6HueUNnHmXL/BCZTvCqrBIBugsww4kucM04xD2l3jCO9xrYVZRN90NkJMG7s0wkVdcnP2Aqx2sM7B7KRvgh0pXgMwkL9DGjOVyAuh6IqBLjvfPJAOtYlqtSqHXCjCzmeIGBPUNZVz9EWhJ8O8m5eP/NvL84wOLuQd1bHK/neLKhc5uyln6INCD4jQuRWQKcNnZ/WBNRJYY+7a03rndUP8XnBzgebGDeUNbAD5HyjPgfY2NKdLaaAL0FWC3AXQGOpSQCjOZh6ncC+dcC7BKgjWuVq96tfVC48t6JaCMvaTTP1bn02EQisdn7KcBZAeYK0C7JOeAe9ZpznMfxS38ktJEbNNK2jHMqNepNqpEHIkh7VwY05KzFLuHqUN6W4xtBiJykkZ4cH3ZZ8HcEWClALwGqZiQSH1fhQi9yFnpZm8+NgrEnZSeDENlBI6MMWRPnWl8fPT8kOPCN5GemmRH17IRzJVsW+8m5bND3BXkGbhSf7whCpKg0S7k/r8DvvNDJOvr7T5/FynaVVpcL0E2ASineMZu6K4IQmUUjRZb6dblRqoLzqbOBxp8VC/BMgG3ODg3Uz0owrVp8WrdLrhpKP++CIEZiC+1ENn3zmXB6BDGShdQXsAE36UObIEZim9FbAVpl0z/L97fiu+Obsk9DFY3zgq5Q9S+rqlaqmU2f+b6atL2J74qX+LEyKYDxTizbXySkzlipMTvQbOmoF9LWT5eNcYu320W7l6oj6TTuGYn/jnjlZDd9b5z6Ek0Xmn2dnwfiV07msaBEgIXcnzzeYfkjpcrxIYzY8xSzVciIq8PTHAHOCfDLJeqbaatW+I4Hm60cR91vU5HVEVaRfsSuFvDgaET9f5PQ2z+HhgN4er6iEAAAAABJRU5ErkJggg=="
-              alt="javascript-logo"
-            />JavaScript
-          </li>
-          <li class="container-skills_item glass">
-            <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFIklEQVR4nO2bz29VRRTHDwii9JUQpSSuLFI3JqJbxBYsof5MDI0bF8Y/QDFsAG00QqMoupLEjRujCzURQ0FjCP6MrogWsSiaqBExURCwgEpBbT5mOuf65rXvx8y90977yjvJTZu555w75/vmzZzvOfeJtKQlLWlJXgILBEpySQjMEVgjsFNgWOBPAfQ6K3BA4AWBWyZ0Z5XAeoFvnYCT63eB0SrjRwTukVkh8LoT2FGBpwVuFVjk6CzWsWcEfnL091ToNaXAdwKnBR4SuMxDf57AwwKnFISvBJZJ0wosFLgyhd21Al8qCMcElktTCDwg8JrA0gi+2gU+aR4Q4EGBcZ3wNwLXRFpBH6rPnwW6pJAC9wv8qxP9Rf8enrIS7Kf6pMBBgXN6HJr/BwU6avguFXslQL/APzrBgYmgbfBTQYANVY49Nx9Y31wgwN0CF3Vig854dRDMp2xB6tXV0KYJ0pDqjjcPCLBOYEwn9HyV+5NBWNLA3xbVPVNTtzAgwGqBv3QiO+voLdXMzuht8vC7V3W31dHJGQRYqRuYmcBLDXN32K+6vR6+b1Pdgw30cgIBbtYc3jz4VYG5HjZJvt/uoduuuucCj8gZAAFWaFprHviGV2pr7c6rzRIP3UWqO+rpe/JKuE6mReAGgRP6oN0C8wNsk5R2nYfuWtX9IMD/NIMA1zvJzbsClwfab1Lb/R6696muOV368geBCVJyTB2/L3BFCh/me/3blFyhduHkxUggdAbPtYrDZPkax22SVizfH3OAXOHcu1HgFYEnFIBYIIxkK7nBW+ro6yiFCegR+F59nnbGk40VDTwrCO1aRzC2u9JO9k6nbBWPgdmjywZbHkuCH2sAwkeaJfoQqOXOcX1H6CTnaOHSGG/MGnMV/7UA6GsAQiiB2qg6n4cVWmGVs5EsiBGzFwD2/1og9CtpavMmULbsnmzgK0MmuF2NnosTcQAAU0F4PBOBMiTN3n8qZIKfqdFqyQMAOzag4y9nIlB2pZh7B0ImeEKNrpb8ANin42szESizKuy9X30nN1+/UxemrUPjB0BSFl+ciUDZ/eOixjRPPOvy42qUJwAJ3S4FEKizNQD42x8AI+W09SrJD4AvdHyNh79e1R3O/hUwYs9NY9Qt+QEwqONDHv7eVt2tsTbBZ9Voh+QHQIcmOebeljq+Hvu/flBt0055DHY7zcww6hsLADve7zRa9upuX9Kr1/nkjc69MROhuQKH1HBD+kgzAlBurZ+pkwqPVg0+Uypcrvejx9GyGSJDC2vYmI1sm/KTP/SEMEFtrZmrVJKh29NOdigOr64opf9Qhw4bqtwT4TkuHX4zlqOPMxZEup38/r1JBZGbtEiS0N70p0/UgogRU1uzXdn0INhE5WTNo2rq0XcyVQEmekksEVMQyQICbFbbfR66SRNlc+AzprlRQgYQwsrifap7KMD/DHWJoFPgR33Qp16dHms3FtAY6VDd856+Z7w71BkMQixik3vwab8OsYhNwTrEXd4glHf3PR5+3/E4LQrzjkCXFwiVxObROv4G6hKbQgUfDkI2YlPI4MNByEJsChp8OAhpiE3Bg8+aJxTyqIu3EkqXzquy1VfCSKqXFSwJO9x8wSdiiijlAE7pG6KNy2u2jPWIUyMYad7X5ZlYwrudXf6oFlx7KkruZvOzxZIdk34wsWt2/KYI7nLSYfe6oNfk8eHwnn7RhYkOzSr9WYxpvh53Aj6uY9tn54+m6vch/V+3a0lLWtISiSv/Abccd/0DaX+mAAAAAElFTkSuQmCC"
-              alt="git"
-            />Git
-          </li>
-          <li class="container-skills_item glass">
-            <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADOElEQVR4nO2ay29MURzHv4tiEpI2Udr6E7DRaLu2ERUsvBLSpXfLSjwSG2ssRKwpsRDxWHmltcDSu1FEbXQxLTpeoUj0I3fmN9zG7Z1zO/fOnZZfcpI59/we32/umXt+v3OO9F+ms0Cz4KDgsuC5YEgwas37/UJwRXBI0KaqE1gjeCAgYusTrKsGAjME3T5gw4ITgs2ChYIGQcZagz3bJDguyPrszgtmpknknAH5KOiMBAZqBFsF783HhUSxhgBZbQA8IEvK8LNYMGK+1saK0RHAdQveZf2VgkFr7RF97TBfNxJCGxo8Z8HrrT/om/OvI/qqN7tcQmhDgxdA/+lPnkiQvxSJtOcJFNqKsv1VTOIOnDoRHJurv4rLtCHiKqkSIb/q7hTc9a285TVXIgQ2D8MdW29qXEksEDyMBXx8RPA1LzltKuVsjuCZGbwUrBfUqhISRhhqBRsEA6bXn8ca4uyYKT4VzE0OdWDs0m/Ow1TA5ukenUipTvBV8FOwVJUW9ynYIhgzrAGzpZBSe856lIZE+WpBr+lvCRosFki74kfp9IEp1DVu+p2mfzposM8GW+JHWhLYgUizAdpM/3HQ4LANNsSPNPRN7Bd8t9jtjnaNpj8UNPjNBjMRwSwX3BS8K3OtORwhZsZsRuMhUtjWKQf8p/x0il5RZsKIRJtasMz0fwj2CuarUsLvqZUNGnxig62OznpMf1/8SJ3/7I/CPr+dpfyY/mfTr2wG4Im34VGIfUohC2KvXCTN+gFuhS2IxRRlzGktSYsItBrGLxMntF4i5po0pkGE/LZRv8U+UiqNLyoOWOpclzoR8rNlo+CVL42fXcqoKdLOemkQ8RZocK90YTW+1N0uuO3bUUyTSM6wbHMvdV0lKpGqFRJ6IxWXf46Iq0w5IkxwjjIFiQwGHj+kSCRnweeVTcQrAQr9kYTQhgK6Nu7ozd3u73MU2GO+riaE1ukw9EOZh6HNdirs+VoVK8YIIM76StauiMfTswS7zdbzcSZRrA6pjP/CwBvBSUGHYJGVpMULA432rMN03vrsuuNPPSY/zSZzheN+3raKL9Vcsl39rO9STdaeXTSd5rTh/hclKL8AE4eCH5/P8DMAAAAASUVORK5CYII="
-              alt="python--v1"
-            />Python
-          </li>
-        </ul>
-      </div>
-    </main>
-    <footer class="footer">FOOTER</footer>
+      </footer>
+    </div>
   </body>
+  <script>
+    const enterBtn = document.getElementById("enterBtn");
+    const intro = document.getElementById("intro");
+    const bgMusic = document.getElementById("bgMusic");
+    const content = document.getElementById("content");
+
+    enterBtn.addEventListener("click", () => {
+      intro.style.opacity = "0";
+      setTimeout(() => {
+        intro.style.display = "none";
+        content.classList.remove("hidden");
+        document.body.style.overflow = "auto";
+        bgMusic.play();
+      }, 1000);
+    });
+  </script>
 </html>

@@ -2,11 +2,13 @@
 @use "./base/typography";
 @use "./components/buttons";
 @use "variable" as *;
-@use "header";
-@use "footer";
+@use "header" as *;
+@use "footer" as *;
+@use "location" as *;
+@use "test" as *;
 li {
   color: #00ffff;
-  filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
+  // filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
 }
 li img {
   height: 50px;
@@ -16,16 +18,16 @@ li img {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  flex-wrap: wrap;
-  margin: 15px auto;
+  width: 100%;
+  margin: 25px auto;
+
   .main-content_card-about {
     display: flex;
     flex-direction: column;
-    // flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 350px;
-    height: 500px;
+    padding: 25px;
     text-align: center;
     margin: 15px auto;
 
@@ -33,39 +35,52 @@ li img {
       width: 200px;
       margin: 10px;
       border-radius: 50%;
-      border: 0.1px solid $secondary-color;
+      border: 1px solid $secondary-color;
+      margin-top: 5px;
     }
     .main-content_card-title {
       margin-top: 15px;
       font-weight: 400;
-      filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
     }
     .main-content_card-text {
-      margin: 15px 15px;
+      padding: 15px;
       font-size: 15px;
       color: $text-color;
     }
   }
-  .container-skills {
-    display: grid;
-    grid-template-rows: 1fr 5fr;
-    .container-skills_title {
+  .container-skills,
+  .container-projects {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 15px auto;
+    .container-skills_title,
+    .container-projects_title {
       margin: 15px 0;
       font-weight: 500;
-      filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
     }
-    .container-skills-list {
+    .container-skills-list,
+    .container-projects-list {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 15px;
-      .container-skills_item {
+      margin: 15px auto;
+      width: 100%;
+
+      .container-skills_item,
+      .container-projects_item {
         display: flex;
         justify-content: start;
         align-items: center;
         padding: 10px;
+        height: 75px;
+
         img {
           margin-right: 15px;
         }
+      }
+      .container-projects_item {
+        justify-content: center;
       }
     }
   }

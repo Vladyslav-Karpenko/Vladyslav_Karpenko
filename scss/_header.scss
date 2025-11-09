@@ -1,5 +1,12 @@
 @use "variable" as *;
-
+.header_buttons {
+  display: grid;
+  width: 100%;
+  a:hover {
+    transition: all 0.5s ease;
+    transform: scale(1.05);
+  }
+}
 .header-logo {
   filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
 }
@@ -7,8 +14,10 @@
   display: grid;
   grid-template-columns: 2fr 8fr 2fr;
   padding-top: 10px;
-
+  position: static;
+  top: 0;
   height: 15vh;
+  z-index: 1;
   .header-logo {
     display: flex;
     flex-direction: column;
@@ -23,17 +32,25 @@
   }
   .nav_menu {
     display: grid;
+    align-items: center;
     z-index: 0;
     margin: 3px 10px;
     .nav_menu-list {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       align-items: center;
+      height: 100px;
+
       .nav_menu-item {
         .nav_menu-link {
           color: $secondary-color;
+        }
+        .nav_menu-link:hover {
+          filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
+        }
 
-          // filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
+        .nav_menu-link--active {
+          color: $primary-color;
         }
       }
     }
@@ -42,21 +59,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .header-btn_contact {
-      height: 100px;
-      width: 200px;
+
+    .header-btn_contact,
+    .header-btn_cv {
+      height: 50px;
       border: 1px solid #00ffff;
-      filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
-      font-size: larger;
+      filter: drop-shadow(0 0 1px #ff00ff) drop-shadow(0 0 0.5px #00ffff);
+      font-size: medium;
       cursor: pointer;
       margin: 0 15px;
+      width: 50px;
+    }
+    .header-btn_cv {
+      width: 150px;
     }
   }
 }
 @media screen and (width <= 768px) {
-  .nav_menu-list {
-    flex-direction: column;
-    font-size: 14px;
+  .nav_menu {
+    display: none;
+
+    .nav_menu-list {
+      display: none;
+      flex-direction: column;
+      font-size: 14px;
+    }
   }
 }
 @media screen and (width <= 320px) {

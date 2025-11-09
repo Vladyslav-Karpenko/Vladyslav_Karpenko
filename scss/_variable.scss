@@ -1,6 +1,6 @@
 $primary-color: #ff00ff;
 $secondary-color: #00ffff;
-$background-gradient: linear-gradient(135deg, #1a1a1a, #000000);
+$background-gradient: linear-gradient(160deg, #010415, #07194e);
 $glass-bg: rgba(255, 255, 255, 0.1);
 $glass-border: rgba(255, 255, 255, 0.2);
 $text-color: #ffffff;
@@ -8,11 +8,11 @@ $font-main: "Rajdhani", sans-serif;
 
 .glass {
   background: $glass-bg;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid $glass-border;
   border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
 }
 .primary-font {
   color: $primary-color;
