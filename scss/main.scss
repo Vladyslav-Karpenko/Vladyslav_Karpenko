@@ -12,10 +12,14 @@ li {
 li img {
   height: 50px;
 }
-.content_video {
-  display: grid;
-  grid-template-rows: auto auto auto;
-}
+// .content_video {
+//   display: grid;
+//   grid-template-rows: auto auto auto;
+//   width: 100%;
+// }
+// #content {
+//   width: 100%;
+// }
 .main-content {
   display: flex;
   flex-direction: column;

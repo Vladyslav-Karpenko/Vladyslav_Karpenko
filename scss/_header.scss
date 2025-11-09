@@ -1,7 +1,11 @@
 @use "variable" as *;
 .header_buttons {
   display: flex;
-
+  justify-content: center;
+  @media screen and (max-width: 420px) {
+    flex-direction: column;
+    gap: 10px;
+  }
   // width: 100%;
   a:hover {
     transition: all 0.5s ease;
@@ -14,7 +18,8 @@
 }
 .header-page {
   display: grid;
-  grid-template-columns: auto 8fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-content: center;
   align-items: center;
   gap: 20px;
   padding-top: 10px;
@@ -83,12 +88,12 @@
           color: $secondary-color;
           text-align: center;
         }
-        .nav_menu-link:hover {
-          filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
-        }
-
         .nav_menu-link--active {
           color: $primary-color;
+          font-weight: 800;
+        }
+        .nav_menu-link:hover {
+          filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
         }
       }
     }
@@ -103,7 +108,7 @@
     .header-btn_cv {
       height: 50px;
       border: 1px solid #00ffff;
-      filter: drop-shadow(0 0 1px #ff00ff) drop-shadow(0 0 0.5px #00ffff);
+      filter: drop-shadow(0 0 1px #ff00ff) drop-shadow(0 0 10px #00ffff);
       font-size: medium;
       cursor: pointer;
       margin: 0 15px;
@@ -114,38 +119,17 @@
     }
   }
 }
-// -Медиа-запросы для экранов: 1920px, 1024px, 768px и 320px.
-// @media screen and (width <= 768px) {
-//   .nav_menu {
-//     grid-row: 1/2;
-//     padding: 5px;
-//     display: none;
-//     position: relative;
-//     .hamburger {
-//       display: flex;
-//       position: fixed;
-//       top: 37px;
-//       left: 27px;
-//     }
-//     .nav_menu-list {
-//       display: none;
-//       flex-direction: column;
-//       position: fixed;
-//       top: 15px;
-//       left: 15px;
-//       gap: 15px;
-//       height: 10px;
-//       width: 6px;
-//       overflow: hidden;
-//       .nav_menu-item {
-//         display: none;
-//       }
-//     }
-//   }
-// }
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 907px) {
+  .header-page {
+    grid-template-columns: auto auto auto;
+    // margin-top: 20px;
+    // padding: 20px;
+  }
   .nav_menu {
-    position: relative;
+    // position: fixed !important;
+    // top: 25px;
+    // left: 25px;
     z-index: 1000;
     grid-row: 1/2;
 
@@ -200,10 +184,11 @@
       border-radius: 16px;
       padding: 20px;
       display: none;
+      transition: transform 0.5s ease;
+
       transform: translateY(-10px);
       backdrop-filter: blur(12px);
       box-shadow: 0 0 20px rgba(255, 0, 255, 0.274);
-      transition: opacity 0.5s ease;
       width: 100px;
 
       &.active {

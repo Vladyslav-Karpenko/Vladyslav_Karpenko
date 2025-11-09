@@ -35,8 +35,6 @@ body {
   font-size: 16px;
   height: 100vh;
   background: linear-gradient(160deg, #010415, #07194e);
-  margin-left: 5%;
-  margin-right: 5%;
   background-attachment: fixed;
 }
 
@@ -72,6 +70,13 @@ body {
 
 .header_buttons {
   display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 420px) {
+  .header_buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 .header_buttons a:hover {
   transition: all 0.5s ease;
@@ -85,7 +90,8 @@ body {
 
 .header-page {
   display: grid;
-  grid-template-columns: auto 8fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-content: center;
   align-items: center;
   gap: 20px;
   padding-top: 10px;
@@ -150,11 +156,12 @@ body {
   color: #00ffff;
   text-align: center;
 }
-.header-page .nav_menu .nav_menu-list .nav_menu-item .nav_menu-link:hover {
-  filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
-}
 .header-page .nav_menu .nav_menu-list .nav_menu-item .nav_menu-link--active {
   color: #ff00ff;
+  font-weight: 800;
+}
+.header-page .nav_menu .nav_menu-list .nav_menu-item .nav_menu-link:hover {
+  filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
 }
 .header-page .header-btn {
   display: flex;
@@ -165,7 +172,7 @@ body {
 .header-page .header-btn .header-btn_cv {
   height: 50px;
   border: 1px solid #00ffff;
-  filter: drop-shadow(0 0 1px #ff00ff) drop-shadow(0 0 0.5px #00ffff);
+  filter: drop-shadow(0 0 1px #ff00ff) drop-shadow(0 0 10px #00ffff);
   font-size: medium;
   cursor: pointer;
   margin: 0 15px;
@@ -175,9 +182,11 @@ body {
   width: 150px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 907px) {
+  .header-page {
+    grid-template-columns: auto auto auto;
+  }
   .nav_menu {
-    position: relative;
     z-index: 1000;
     grid-row: 1/2;
   }
@@ -229,11 +238,11 @@ body {
     border-radius: 16px;
     padding: 20px;
     display: none;
+    transition: transform 0.5s ease;
     transform: translateY(-10px);
     -webkit-backdrop-filter: blur(12px);
             backdrop-filter: blur(12px);
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.274);
-    transition: opacity 0.5s ease;
     width: 100px;
   }
   .nav_menu .nav_menu-list.active {
@@ -396,11 +405,6 @@ li {
 
 li img {
   height: 50px;
-}
-
-.content_video {
-  display: grid;
-  grid-template-rows: auto auto auto;
 }
 
 .main-content {
