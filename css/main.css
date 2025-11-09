@@ -133,8 +133,6 @@ body {
 .header-page .nav_menu .hamburger {
   flex-direction: column;
   justify-content: space-between;
-  width: 28px;
-  height: 20px;
   cursor: pointer;
   z-index: 1001;
 }
