@@ -124,3 +124,39 @@ li img {
     }
   }
 }
+// WOW 
+// .main-content_card-title {
+//   position: relative;
+//   display: inline-block;
+//   text-decoration: none;
+//   color: #fff;
+//   padding: 20px 40px;
+//   border-radius: 20px;
+//   overflow: visible;
+// }
+
+// .main-content_card-title::before {
+//   content: "";
+//   position: absolute;
+//   inset: -10px;
+//   border-radius: 30px;
+//   background: conic-gradient(
+//     from 0deg,
+//     #6b00ff,
+//     #ff00cc,
+//     #00d0ff,
+//     #6b00ff
+//   );
+//   filter: blur(20px);
+//   animation: neonSpin 4s linear infinite;
+//   z-index: -1;
+// }
+
+// @keyframes neonSpin {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }

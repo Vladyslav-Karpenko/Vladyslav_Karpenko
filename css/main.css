@@ -34,10 +34,22 @@ body {
   font-family: "Rajdhani", sans-serif;
   font-size: 16px;
   height: 100vh;
-  background: linear-gradient(160deg, #010415, #07194e);
-  background-attachment: fixed;
+  background: linear-gradient(135deg, #0a0020, #12003a, #001f4d, #220042);
+  background-size: 400% 400%;
+  animation: midnightNeon 15s ease infinite;
 }
 
+@keyframes midnightNeon {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .rajdhani-light {
   font-family: "Rajdhani", sans-serif;
   font-weight: 300;
@@ -72,7 +84,7 @@ body {
   display: flex;
   justify-content: center;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 477px) {
   .header_buttons {
     flex-direction: column;
     gap: 10px;
