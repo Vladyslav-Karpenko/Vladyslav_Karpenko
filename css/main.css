@@ -216,6 +216,7 @@ body {
     box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
   }
   .nav_menu .nav_menu-list {
+    opacity: 0;
     position: absolute;
     top: 70px;
     left: -20px;
@@ -228,23 +229,21 @@ body {
     border-radius: 16px;
     padding: 20px;
     display: none;
-    opacity: 0;
     transform: translateY(-10px);
     -webkit-backdrop-filter: blur(12px);
             backdrop-filter: blur(12px);
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.274);
-    transition: all 0.5s ease;
+    transition: opacity 0.5s ease;
     width: 100px;
   }
   .nav_menu .nav_menu-list.active {
     display: flex;
-    padding: 10px 0;
     opacity: 1;
-    transform: translateY(0);
   }
   .nav_menu .nav_menu-list .nav_menu-item {
     margin: 5px 0;
     width: 100%;
+    padding: 10px !important;
   }
   .nav_menu .nav_menu-list .nav_menu-item .nav_menu-link {
     color: #00ffff;
@@ -330,7 +329,7 @@ body {
     grid-template-rows: 1fr 3fr 1fr;
   }
   .footer_items li:first-child {
-    margin-right: 30px !important;
+    margin-right: 20px !important;
   }
   .footer_input {
     flex-direction: column;
