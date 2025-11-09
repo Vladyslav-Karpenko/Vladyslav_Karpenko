@@ -28,21 +28,26 @@
     </div>
     <div id="content" class="hidden">
       <header class="header-page">
-        <a href="index.html" class="header-logo animate__animated animate__zoomIn">
-          <h1 class="header-logo_title primary-font animate__animated animate__zoomIn">
+        <a href="index.html" class="header-logo">
+          <h1 class="header-logo_title primary-font">
             Vladyslav <br />Karpenko
           </h1>
           <p class="header-logo_title-rank">Full Stack Developer</p>
         </a>
-        <div class="nav_menu animate__animated animate__zoomIn">
-          <ul class="nav_menu-list glass">
+        <div class="nav_menu">
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav_menu-list glass rajdhani-medium" id="navList">
             <li class="nav_menu-item">
               <a class="nav_menu-link nav_menu-link--active" href="index.html"
                 >Home</a
               >
             </li>
-            <li class="nav_menu-item">
-              <a class="nav_menu-link" href="#about_me">About me</a>
+            <li class="nav_menu-item ">
+              <a class="nav_menu-link r" href="#about_me">About me</a>
             </li>
             <li class="nav_menu-item">
               <a class="nav_menu-link" href="#skills">Skills</a>
@@ -57,7 +62,7 @@
             </li>
           </ul>
         </div>
-        <div class="header_buttons animate__animated animate__zoomIn">
+        <div class="header_buttons">
           <a href="tel:+420735851069" class="header-btn">
             <button
               type="button"
@@ -240,15 +245,33 @@
     const intro = document.getElementById("intro");
     const bgMusic = document.getElementById("bgMusic");
     const content = document.getElementById("content");
-
+    if (localStorage.getItem("entered")) {
+      intro.style.display = "none";
+      content.classList.remove("hidden");
+      document.body.style.overflow = "auto";
+    }
     enterBtn.addEventListener("click", () => {
       intro.style.opacity = "0";
       setTimeout(() => {
         intro.style.display = "none";
         content.classList.remove("hidden");
         document.body.style.overflow = "auto";
-        bgMusic.play();
+        bgMusic.currentTime = 0;
+        bgMusic.volume = 0.6;
+        bgMusic.play().catch((err) => console.log("Music play blocked:", err));
+        localStorage.setItem("entered", "true");
       }, 1000);
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.getElementById("hamburger");
+      const navList = document.getElementById("navList");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navList.classList.toggle("active");
+      });
     });
   </script>
 </html>

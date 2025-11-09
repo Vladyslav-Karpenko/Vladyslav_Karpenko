@@ -30,6 +30,8 @@ li img {
     padding: 25px;
     text-align: center;
     margin: 15px auto;
+    z-index: 1;
+    position: relative;
 
     .main-content_photo {
       width: 200px;
