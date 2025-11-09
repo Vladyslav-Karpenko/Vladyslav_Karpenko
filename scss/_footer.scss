@@ -4,7 +4,7 @@
   display: grid;
   grid-template-rows: 3fr 1fr;
   align-items: center;
-  height: 150px;
+  // height: 150px;
   margin: 25px auto;
   color: wheat;
   gap: 25px;
@@ -72,7 +72,6 @@
 
 @media screen and (max-width: 768px) {
   .footer {
-    height: 350px;
     grid-template-rows: 1fr 3fr 1fr;
   }
   .footer_items li:first-child {

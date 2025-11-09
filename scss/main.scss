@@ -1,5 +1,5 @@
-@use "./base/reset";
-@use "./base/typography";
+@use "./base/reset" as *;
+@use "./base/typography" as *;
 @use "./components/buttons";
 @use "variable" as *;
 @use "header" as *;
@@ -8,10 +8,13 @@
 @use "test" as *;
 li {
   color: #00ffff;
-  // filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
 }
 li img {
   height: 50px;
+}
+.content_video {
+  display: grid;
+  grid-template-rows: auto auto auto;
 }
 .main-content {
   display: flex;
@@ -19,9 +22,29 @@ li img {
   justify-content: center;
   align-content: center;
   width: 100%;
-  margin: 25px auto;
-
+  margin: 35px auto;
+  position: relative;
+  // .main-content_frame {
+  //   position: sticky;
+  //   top: 0;
+  //   left: -250px;
+  //   width: 100%;
+  //   z-index: -2;
+  // }
   .main-content_card-about {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    // width: 350px;
+    // padding: 25px;
+    // text-align: center;
+    // margin: 15px auto;
+    // z-index: 1;
+    // position: relative;
+    // transition: transform 0.2s ease;
+
+    // My test hover
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,8 +53,11 @@ li img {
     padding: 25px;
     text-align: center;
     margin: 15px auto;
-    z-index: 1;
     position: relative;
+    z-index: 1;
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 
     .main-content_photo {
       width: 200px;
@@ -56,6 +82,7 @@ li img {
     flex-direction: column;
     width: 350px;
     margin: 15px auto;
+
     .container-skills_title,
     .container-projects_title {
       margin: 15px 0;
@@ -76,7 +103,13 @@ li img {
         align-items: center;
         padding: 10px;
         height: 75px;
+        cursor: pointer;
+        transition: transform 0.2s ease ;
 
+        &:hover {
+          transform: scale(1.1);
+          z-index: 1002;
+        }
         img {
           margin-right: 15px;
         }

@@ -1,7 +1,8 @@
 @use "variable" as *;
 .header_buttons {
-  display: grid;
-  width: 100%;
+  display: flex;
+
+  // width: 100%;
   a:hover {
     transition: all 0.5s ease;
     transform: scale(1.05);
@@ -13,11 +14,12 @@
 }
 .header-page {
   display: grid;
-  grid-template-columns: 2fr 8fr 2fr;
+  grid-template-columns: auto 8fr 1fr;
+  align-items: center;
+  gap: 20px;
   padding-top: 10px;
   position: relative;
   top: 0;
-  height: 15vh;
 
   .header-logo {
     display: flex;
@@ -91,6 +93,7 @@
       }
     }
   }
+
   .header-btn {
     display: flex;
     justify-content: center;

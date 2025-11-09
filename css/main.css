@@ -71,8 +71,7 @@ body {
 }
 
 .header_buttons {
-  display: grid;
-  width: 100%;
+  display: flex;
 }
 .header_buttons a:hover {
   transition: all 0.5s ease;
@@ -86,11 +85,12 @@ body {
 
 .header-page {
   display: grid;
-  grid-template-columns: 2fr 8fr 2fr;
+  grid-template-columns: auto 8fr 1fr;
+  align-items: center;
+  gap: 20px;
   padding-top: 10px;
   position: relative;
   top: 0;
-  height: 15vh;
 }
 .header-page .header-logo {
   display: flex;
@@ -260,7 +260,6 @@ body {
   display: grid;
   grid-template-rows: 3fr 1fr;
   align-items: center;
-  height: 150px;
   margin: 25px auto;
   color: wheat;
   gap: 25px;
@@ -325,7 +324,6 @@ body {
 
 @media screen and (max-width: 768px) {
   .footer {
-    height: 350px;
     grid-template-rows: 1fr 3fr 1fr;
   }
   .footer_items li:first-child {
@@ -400,13 +398,19 @@ li img {
   height: 50px;
 }
 
+.content_video {
+  display: grid;
+  grid-template-rows: auto auto auto;
+}
+
 .main-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   width: 100%;
-  margin: 25px auto;
+  margin: 35px auto;
+  position: relative;
 }
 .main-content .main-content_card-about {
   display: flex;
@@ -417,8 +421,11 @@ li img {
   padding: 25px;
   text-align: center;
   margin: 15px auto;
-  z-index: 1;
   position: relative;
+  z-index: 1;
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 .main-content .main-content_card-about .main-content_photo {
   width: 200px;
@@ -473,6 +480,19 @@ li img {
   align-items: center;
   padding: 10px;
   height: 75px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.main-content .container-skills .container-skills-list .container-skills_item:hover,
+.main-content .container-skills .container-skills-list .container-projects_item:hover,
+.main-content .container-skills .container-projects-list .container-skills_item:hover,
+.main-content .container-skills .container-projects-list .container-projects_item:hover,
+.main-content .container-projects .container-skills-list .container-skills_item:hover,
+.main-content .container-projects .container-skills-list .container-projects_item:hover,
+.main-content .container-projects .container-projects-list .container-skills_item:hover,
+.main-content .container-projects .container-projects-list .container-projects_item:hover {
+  transform: scale(1.1);
+  z-index: 1002;
 }
 .main-content .container-skills .container-skills-list .container-skills_item img,
 .main-content .container-skills .container-skills-list .container-projects_item img,
