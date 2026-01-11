@@ -31,3 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+const myPhoto = document.querySelector('#photo');
+
+myPhoto.addEventListener('click', () => {
+    myPhoto.style.animation = 'none';
+    myPhoto.offsetHeight;
+
+    myPhoto.style.animation = `rotate 1s linear 1`;
+});
