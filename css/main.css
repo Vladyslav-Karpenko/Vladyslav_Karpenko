@@ -409,8 +409,39 @@ body {
   display: none;
 }
 
-li {
+li,
+a {
   color: #00ffff;
+  z-index: 1;
+}
+li:hover .iframe-wrapper,
+a:hover .iframe-wrapper {
+  filter: grayscale(0%);
+}
+li a,
+a a {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+}
+li .iframe-wrapper,
+a .iframe-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  border-radius: 20px;
+  filter: grayscale(100%);
+}
+li .iframe-wrapper iframe,
+a .iframe-wrapper iframe {
+  width: 550px;
+  height: 800px;
+  transform: scale(0.3);
+  transform-origin: 0 0;
+  border: none;
+  overflow: hidden;
 }
 
 li img {
