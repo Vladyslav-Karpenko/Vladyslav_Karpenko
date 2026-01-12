@@ -7,7 +7,7 @@
   // height: 150px;
   margin: 25px auto;
   color: wheat;
-  gap: 25px;
+  gap: 15px;
   .footer_title {
     margin-top: 15px;
     font-weight: 400;
@@ -44,7 +44,7 @@
       cursor: pointer;
       margin: 0 15px;
       padding: 15px;
-      // width: 200px;
+
       color: $secondary-color;
     }
     .footer_input-btn:hover {
