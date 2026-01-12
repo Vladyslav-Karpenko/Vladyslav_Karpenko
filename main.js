@@ -38,31 +38,6 @@ if (header) {
                     navList.classList.toggle("active");
                 });
             }
-            // ! Modal window for CV
-
-            const modalCV = document.querySelector("#cvModal");
-            const btnCV = document.querySelector("#openCV");
-            const spanCV = modalCV.querySelector(".close");
-
-
-
-            btnCV.addEventListener('click', () => modalCV.style.display = "block")
-            spanCV.addEventListener('click', () => modalCV.style.display = 'none')
-            window.addEventListener('click', (event) => {
-                if (event.target == modalCV) {
-                    modalCV.style.display = 'none'
-                }
-            })
-
-            // document.addEventListener("DOMContentLoaded", function () {
-            //     const hamburger = document.getElementById("hamburger");
-            //     const navList = document.getElementById("navList");
-
-            //     hamburger.addEventListener("click", () => {
-            //         hamburger.classList.toggle("active");
-            //         navList.classList.toggle("active");
-            //     });
-            // });
         })
         .catch(err => console.error('Ошибка при загрузке header:', err));
 }
