@@ -50,16 +50,16 @@ footerYear.textContent = `© ${new Date().getFullYear()} Vladyslav Karpenko`
 
 // ! Modal window for CV
 
-const modal = document.querySelector("#cvModal");
+const modalCV = document.querySelector("#cvModal");
 const btnCV = document.querySelector("#openCV");
-const spanCV = modal.querySelector(".close");
+const spanCV = modalCV.querySelector(".close");
 
 
 
-btnCV.addEventListener('click', () => modal.style.display = "block")
-spanCV.addEventListener('click', () => modal.style.display = 'none')
+btnCV.addEventListener('click', () => modalCV.style.display = "block")
+spanCV.addEventListener('click', () => modalCV.style.display = 'none')
 window.addEventListener('click', (event) => {
-    if (event.target == modal) {
-        modal.style.display = 'none'
+    if (event.target == modalCV) {
+        modalCV.style.display = 'none'
     }
 })
