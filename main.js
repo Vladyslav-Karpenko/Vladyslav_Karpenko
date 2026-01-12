@@ -1,3 +1,5 @@
+// !! Welcome screen
+
 const enterBtn = document.getElementById("enterBtn");
 const intro = document.getElementById("intro");
 const bgMusic = document.getElementById("bgMusic");
@@ -39,3 +41,25 @@ myPhoto.addEventListener('click', () => {
 
     myPhoto.style.animation = `rotate 1s linear 1`;
 });
+
+
+// !! Year of footer
+
+const footerYear = document.querySelector('#propYear')
+footerYear.textContent = `© ${new Date().getFullYear()} Vladyslav Karpenko`
+
+// ! Modal window for CV
+
+const modal = document.querySelector("#cvModal");
+const btnCV = document.querySelector("#openCV");
+const spanCV = modal.querySelector(".close");
+
+
+
+btnCV.addEventListener('click', () => modal.style.display = "block")
+spanCV.addEventListener('click', () => modal.style.display = 'none')
+window.addEventListener('click', (event) => {
+    if (event.target == modal) {
+        modal.style.display = 'none'
+    }
+})

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .glass {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(4px);
@@ -181,6 +182,7 @@ body {
 .header-page .header-btn .header-btn_contact,
 .header-page .header-btn .header-btn_cv {
   height: 50px;
+  width: 50px;
   border: 1px solid #00ffff;
   filter: drop-shadow(0 0 1px #ff00ff) drop-shadow(0 0 10px #00ffff);
   font-size: medium;
@@ -188,8 +190,11 @@ body {
   margin: 0 15px;
   width: 50px;
 }
-.header-page .header-btn .header-btn_cv {
-  width: 150px;
+
+.container_header-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 907px) {
@@ -317,8 +322,7 @@ body {
   font-size: medium;
   cursor: pointer;
   margin: 0 15px;
-  padding: 5px;
-  width: 100px;
+  padding: 15px;
   color: #00ffff;
 }
 .footer .footer_input .footer_input-btn:hover {
@@ -442,10 +446,6 @@ a .iframe-wrapper iframe {
   transform-origin: 0 0;
   border: none;
   overflow: hidden;
-}
-
-li img {
-  height: 50px;
 }
 
 .main-content {
@@ -575,4 +575,37 @@ li img {
 .main-content .container-projects .container-skills-list .container-projects_item,
 .main-content .container-projects .container-projects-list .container-projects_item {
   justify-content: center;
+}
+
+/* Модальное окно на весь экран */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal iframe {
+  width: 90%;
+  height: 90%;
+  margin: 5% auto;
+  display: block;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #000;
+}
+
+/* Кнопка закрытия */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
 }

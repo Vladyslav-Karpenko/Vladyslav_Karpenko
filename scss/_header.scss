@@ -105,6 +105,7 @@
     .header-btn_contact,
     .header-btn_cv {
       height: 50px;
+      width: 50px;
       border: 1px solid #00ffff;
       filter: drop-shadow(0 0 1px #ff00ff) drop-shadow(0 0 10px #00ffff);
       font-size: medium;
@@ -112,22 +113,20 @@
       margin: 0 15px;
       width: 50px;
     }
-    .header-btn_cv {
-      width: 150px;
-    }
   }
+}
+
+.container_header-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 907px) {
   .header-page {
     grid-template-columns: auto auto auto;
-    // margin-top: 20px;
-    // padding: 20px;
   }
   .nav_menu {
-    // position: fixed !important;
-    // top: 25px;
-    // left: 25px;
     z-index: 1000;
     grid-row: 1/2;
 

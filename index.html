@@ -62,8 +62,8 @@
             </li>
           </ul>
         </div>
-        <div class="header_buttons">
-          <a href="tel:+420735851069" class="header-btn">
+        <div class="header-btn">
+          <a href="tel:+420735851069" class="">
             <button
               type="button"
               class="header-btn_contact secondary-font glass material-symbols-outlined"
@@ -71,26 +71,22 @@
               call
             </button>
           </a>
-          <a href="files/CV.pdf" class="header-btn">
-            <button type="button" class="header-btn_cv secondary-font glass">
-              Download CV
+          <div class="header-btn">
+            <button
+              id="openCV"
+              class="header-btn header-btn_cv secondary-font glass">
+              CV
             </button>
-          </a>
+          </div>
+
+          <!-- Modal window -->
+          <div id="cvModal" class="modal">
+            <span class="close">&times;</span>
+            <iframe src="files/CV.pdf" frameborder="0"></iframe>
+          </div>
         </div>
       </header>
       <main class="main-content">
-        <!-- <div class="main-content_frame">
-          <iframe
-            src="https://player.vimeo.com/video/1131111274?h=b28b9335b9&background=1&autoplay=1&muted=1&loop=1"
-            width="426"
-            height="240"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            title="New_FinalWeb_Horizontal"
-          ></iframe>
-        </div> -->
-
         <div
           class="main-content_card-about glass animate__animated animate__zoomIn"
         >
@@ -191,10 +187,10 @@
             placeholder="Your email"
             required
           />
-          <button class="footer_input-btn glass" type="submit">SEND</button>
+          <button class="footer_input-btn glass" type="submit">Send</button>
         </form>
         <ul class="footer_items">
-          <li>© 2025 Vladyslav Karpenko</li>
+          <li id="propYear"></li>
           <li>
             <a href="https://github.com/Vladyslav-Karpenko"
               ><img
