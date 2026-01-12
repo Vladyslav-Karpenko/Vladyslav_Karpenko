@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .glass {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(4px);
@@ -310,6 +311,11 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  #iframe {
+    height: 90vh; /* почти весь экран на телефоне */
+  }
+}
 .footer {
   display: grid;
   grid-template-rows: 3fr 1fr;

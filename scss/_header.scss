@@ -242,3 +242,8 @@
   font-weight: bold;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  #iframe {
+    height: 90vh; /* почти весь экран на телефоне */
+  }
+}

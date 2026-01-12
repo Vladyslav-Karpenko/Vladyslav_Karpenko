@@ -6,16 +6,6 @@ if (header) {
         .then(response => response.text())
         .then(html => {
             header.innerHTML = html;
-            // ! Hamburger
-            const hamburger = document.getElementById("hamburger");
-            const navList = document.getElementById("navList");
-
-            if (hamburger && navList) {
-                hamburger.addEventListener("click", () => {
-                    hamburger.classList.toggle("active");
-                    navList.classList.toggle("active");
-                });
-            }
             // !Welcome screen
             const enterBtn = document.getElementById("enterBtn");
             const intro = document.getElementById("intro");
@@ -38,6 +28,16 @@ if (header) {
                     localStorage.setItem("entered", "true");
                 }, 1000);
             });
+            // ! Hamburger
+            const hamburger = document.getElementById("hamburger");
+            const navList = document.getElementById("navList");
+
+            if (hamburger && navList) {
+                hamburger.addEventListener("click", () => {
+                    hamburger.classList.toggle("active");
+                    navList.classList.toggle("active");
+                });
+            }
             // ! Modal window for CV
 
             const modalCV = document.querySelector("#cvModal");
@@ -68,22 +68,16 @@ if (header) {
 }
 
 
-// !! Welcome screen
-
-
-
-
-
-
+// ! Photo rotate
 const myPhoto = document.querySelector('#photo');
+if (myPhoto) {
+    myPhoto.addEventListener('click', () => {
+        myPhoto.style.animation = 'none';
+        myPhoto.offsetHeight;
 
-myPhoto.addEventListener('click', () => {
-    myPhoto.style.animation = 'none';
-    myPhoto.offsetHeight;
-
-    myPhoto.style.animation = `rotate 1s linear 1`;
-});
-
+        myPhoto.style.animation = `rotate 1s linear 1`;
+    });
+}
 
 // !! Year of footer
 
