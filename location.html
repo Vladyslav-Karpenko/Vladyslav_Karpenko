@@ -110,23 +110,36 @@
         <h2 class="footer_title primary-font">
           Need a quote for a project? Get in touch...
         </h2>
-
-        <form class="footer_input">
+<form
+          class="footer_input"
+          action="https://formspree.io/f/mnjjqzan"
+          method="POST"
+        >
           <input
-            class="glass rajdhani-bold"
+            class="footer_input-name glass rajdhani-bold"
             type="text"
             placeholder="Your name"
+            name="name"
+            id="name"
             required
           />
           <input
-            class="glass rajdhani-bold"
+            class="footer_input-email glass rajdhani-bold"
             type="email"
-            name=""
-            id=""
+            name="email"
             placeholder="Your email"
             required
+            id="email"
           />
-          <button class="footer_input-btn glass" type="submit">SEND</button>
+          <input
+            class="footer_input-message glass rajdhani-bold"
+            type="text"
+            name="message"
+            placeholder="Your messsage..."
+            required
+            id="message"
+          />
+          <button class="footer_input-btn glass" type="submit">Send</button>
         </form>
         <ul class="footer_items">
           <li id="propYear"></li>

@@ -2,30 +2,30 @@
 
 .footer {
   display: grid;
-  grid-template-rows: 3fr 1fr;
+  grid-template-rows: 2fr 1fr;
   align-items: center;
-  // height: 150px;
   margin: 25px auto;
   color: wheat;
   gap: 15px;
   .footer_title {
-    margin-top: 15px;
     font-weight: 400;
     text-align: center;
   }
   .footer_input {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 18px;
     height: 50px;
     text-align: center;
-    max-width: 680px;
+    min-width: 70vw;
     margin: 0 auto;
     input {
       padding: 14px 16px;
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 20px;
       color: whitesmoke;
+      text-align: center;
     }
     input:focus {
       border-color: rgba(236, 72, 153, 0.8);
@@ -33,7 +33,15 @@
         0 0 20px rgba(168, 85, 247, 0.5),
         inset 0 0 12px rgba(255, 255, 255, 0.1);
       transform: scale(1.02);
-      color: whitesmoke;
+    }
+    .footer_input-name {
+      width: 20%;
+    }
+    .footer_input-email {
+      width: 30%;
+    }
+    .footer_input-message {
+      width: 60%;
     }
     .footer_input-btn {
       position: relative;
@@ -44,7 +52,6 @@
       cursor: pointer;
       margin: 0 15px;
       padding: 15px;
-
       color: $secondary-color;
     }
     .footer_input-btn:hover {
@@ -57,6 +64,7 @@
     justify-content: center;
     align-items: center;
     gap: 15px;
+
     li:not(:first-child):hover {
       filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
     }
@@ -72,7 +80,7 @@
 
 @media screen and (max-width: 768px) {
   .footer {
-    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
   }
   .footer_items li:first-child {
     margin-right: 20px !important;
