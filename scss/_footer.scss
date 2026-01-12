@@ -4,12 +4,13 @@
   display: grid;
   grid-template-rows: 2fr 1fr;
   align-items: center;
-  margin: 25px auto;
+  margin: 0 auto;
   color: wheat;
   gap: 15px;
   .footer_title {
     font-weight: 400;
     text-align: center;
+    margin-top: 20px;
   }
   .footer_input {
     display: flex;
@@ -34,15 +35,15 @@
         inset 0 0 12px rgba(255, 255, 255, 0.1);
       transform: scale(1.02);
     }
-    .footer_input-name {
-      width: 20%;
-    }
-    .footer_input-email {
-      width: 30%;
-    }
-    .footer_input-message {
-      width: 60%;
-    }
+    // .footer_input-name {
+    //   // width: 30%;
+    // }
+    // .footer_input-email {
+    //   // width: 30%;
+    // }
+    // .footer_input-message {
+    //   // width: 50%;
+    // }
     .footer_input-btn {
       position: relative;
       border-radius: 20px;
@@ -68,9 +69,6 @@
     li:not(:first-child):hover {
       filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
     }
-    li:first-child {
-      margin-right: 100px;
-    }
 
     img {
       transform: scale(0.5);
@@ -83,7 +81,8 @@
     grid-template-rows: 1fr 4fr 1fr;
   }
   .footer_items li:first-child {
-    margin-right: 20px !important;
+    // margin-right: 20px !important;
+    font-size: 0.8rem;
   }
   .footer_input {
     flex-direction: column;
