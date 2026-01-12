@@ -31,8 +31,9 @@
       <button id="enterBtn">Enter</button>
       <audio id="bgMusic" src="files/nomyn.mp3"></audio>
     </div>
-    <div id="content">
-      <header class="header-page">
+    <div id="content" class="content-location">
+      <header id="header" class="header-page"></header>
+      <!-- <header class="header-page">
         <a href="index.html" class="header-logo">
           <h1 class="header-logo_title primary-font">
             Vladyslav <br />Karpenko
@@ -76,14 +77,22 @@
               call
             </button>
           </a>
-          <a href="files/CV.pdf" class="header-btn">
-            <button type="button" class="header-btn_cv secondary-font glass">
-              Download CV
+          <div class="header-btn">
+            <button
+              id="openCV-location"
+              class="header-btn header-btn_cv secondary-font glass "
+            >
+              CV
             </button>
-          </a>
+          </div>
         </div>
-      </header>
-      <main>
+        <!-- Modal CV -->
+        <!-- <div id="cvModal" class="modal">
+            <span class="close">&times;</span>
+            <iframe src="files/CV.pdf" frameborder="0"></iframe>
+          </div> -->
+      <!-- </header> --> -->
+      <main id="main-location">
         <div class="location_container animate__animated animate__jackInTheBox">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163930.7278572508!2d14.4656836!3d50.05974005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b939c0970798b%3A0x400af0f66164090!2z0J_RgNCw0LPQsA!5e0!3m2!1sru!2scz!4v1762639135473!5m2!1sru!2scz"
@@ -153,38 +162,5 @@
       </footer>
     </div>
   </body>
-  <script>
-    const enterBtn = document.getElementById("enterBtn");
-    const intro = document.getElementById("intro");
-    const bgMusic = document.getElementById("bgMusic");
-    const content = document.getElementById("content");
-    if (localStorage.getItem("entered")) {
-      intro.style.display = "none";
-      content.classList.remove("hidden");
-      document.body.style.overflow = "auto";
-    }
-    enterBtn.addEventListener("click", () => {
-      intro.style.opacity = "0";
-      setTimeout(() => {
-        intro.style.display = "none";
-        content.classList.remove("hidden");
-        document.body.style.overflow = "auto";
-        bgMusic.currentTime = 0;
-        bgMusic.volume = 0.6;
-        bgMusic.play().catch((err) => console.log("Music play blocked:", err));
-        localStorage.setItem("entered", "true");
-      }, 1000);
-    });
-  </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const hamburger = document.getElementById("hamburger");
-      const navList = document.getElementById("navList");
-
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navList.classList.toggle("active");
-      });
-    });
-  </script>
+  <script src="main.js"></script>
 </html>
