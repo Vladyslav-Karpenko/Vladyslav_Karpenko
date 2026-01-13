@@ -8,8 +8,61 @@ if (localStorage.getItem("entered")) {
     intro.style.display = "none";
     content.classList.remove("hidden");
     document.body.style.overflow = "auto";
+} else {
+    // ! Matrix effect 
+
+    const canvas = document.getElementById("matrixCanvas");
+    const ctx = canvas.getContext("2d");
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    const letters = [
+        "<", ">", "{", "}", "/",
+        "JS", "PY", "HTML", "CSS"
+    ];
+    const fontSize = 16;
+    let columns = canvas.width / fontSize;
+    let drops = [];
+
+    function initDrops() {
+        columns = Math.floor(canvas.width / fontSize);
+        drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = Math.random() * canvas.height;
+        }
+    }
+
+    initDrops();
+
+    function drawMatrix() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#00ffff";
+        ctx.font = `${fontSize}px monospace`;
+
+        for (let i = 0; i < drops.length; i++) {
+            const text = letters[Math.floor(Math.random() * letters.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+    }
+
 }
+let matrixInterval = setInterval(drawMatrix, 33);
+
 enterBtn.addEventListener("click", () => {
+    clearInterval(matrixInterval);
     intro.style.opacity = "0";
     setTimeout(() => {
         intro.style.display = "none";
@@ -21,6 +74,8 @@ enterBtn.addEventListener("click", () => {
         localStorage.setItem("entered", "true");
     }, 1000);
 });
+
+
 
 const header = document.querySelector('#header');
 if (header) {
@@ -38,6 +93,7 @@ if (header) {
                     navList.classList.toggle("active");
                 });
             }
+            // !Active link on active page
             const currentPage = window.location.pathname.split('/').pop()
             const linkLocation = document.querySelector('.link-location')
             const linkHome = document.querySelector('.link-home')

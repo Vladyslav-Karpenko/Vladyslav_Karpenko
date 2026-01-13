@@ -34,12 +34,13 @@ body {
   font-family: "Rajdhani", sans-serif;
   font-size: 16px;
   height: 100vh;
-  background: linear-gradient(135deg, #01071a, #001f33, #003366, #001a2b);
-  background-size: 600% 600%;
-  animation: darkNeonFlow 50s ease-in-out infinite;
+  background: linear-gradient(-45deg, #000014, #000066, #050563, #000033);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  overflow: hidden;
 }
 
-@keyframes darkNeonFlow {
+@keyframes gradientBG {
   0% {
     background-position: 0% 50%;
   }
@@ -611,4 +612,22 @@ a .iframe-wrapper iframe {
 .main-content .container-projects .container-skills-list .container-projects_item,
 .main-content .container-projects .container-projects-list .container-projects_item {
   justify-content: center;
+}
+
+#matrixCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.intro-overlay {
+  z-index: 2;
+}
+
+#enterBtn {
+  position: relative;
+  z-index: 3;
 }
