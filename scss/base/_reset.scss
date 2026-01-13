@@ -13,13 +13,18 @@ body {
   font-family: $font-main;
   font-size: 16px;
   height: 100vh;
-  // background: $background-gradient;
-  background: linear-gradient(135deg, #0a0020, #12003a, #001f4d, #220042);
-  background-size: 400% 400%;
-  animation: midnightNeon 15s ease infinite;
+  background: linear-gradient(
+    135deg,
+    #01071a,
+    /* почти черный с синим */ #001f33,
+    /* глубокий темно-синий */ #003366,
+    /* темно-синий неон */ #001a2b /* финальный тёмный акцент */
+  );
+  background-size: 600% 600%;
+  animation: darkNeonFlow 50s ease-in-out infinite;
 }
 
-@keyframes midnightNeon {
+@keyframes darkNeonFlow {
   0% {
     background-position: 0% 50%;
   }
@@ -29,4 +34,15 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+.neon-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(0, 54, 102, 0.2),
+    transparent 70%
+  );
+  pointer-events: none;
+  mix-blend-mode: screen;
 }

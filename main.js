@@ -38,6 +38,18 @@ if (header) {
                     navList.classList.toggle("active");
                 });
             }
+            const currentPage = window.location.pathname.split('/').pop()
+            const linkLocation = document.querySelector('.link-location')
+            const linkHome = document.querySelector('.link-home')
+
+            function setActiveLink() {
+                if (currentPage == 'location.html') {
+                    linkLocation.classList.add('nav_menu-link--active')
+                } else if (currentPage == 'index.html') {
+                    linkHome.classList.add('nav_menu-link--active')
+                }
+            }
+            setActiveLink()
         })
         .catch(err => console.error('Ошибка при загрузке header:', err));
 }

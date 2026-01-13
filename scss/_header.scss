@@ -21,7 +21,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding-top: 10px;
+  padding-top: 20px;
   position: relative;
   top: 0;
 
@@ -47,7 +47,6 @@
     z-index: 2;
 
     .hamburger {
-      // display: none;
       flex-direction: column;
       justify-content: space-between;
       cursor: pointer;
@@ -77,6 +76,11 @@
       justify-content: space-evenly;
       align-items: center;
       padding: 15px 5px;
+      box-shadow: 0 0 10px rgba(0, 217, 255, 0.737);
+      transition: all 0.5s ease;
+      &:hover {
+        box-shadow: 0 0 20px rgba(0, 217, 255, 0.737);
+      }
 
       .nav_menu-item {
         padding: 25px 10px;
@@ -111,6 +115,10 @@
       cursor: pointer;
       margin: 0 15px;
       width: 50px;
+      transition: scale 0.5s ease;
+      &:hover {
+        scale: 1.2;
+      }
     }
   }
 }
@@ -122,9 +130,6 @@
 }
 
 @media screen and (max-width: 907px) {
-  .header-page {
-    grid-template-columns: auto auto auto;
-  }
   .nav_menu {
     z-index: 1000;
     grid-row: 1/2;
@@ -169,7 +174,6 @@
     .nav_menu-list {
       position: absolute;
       top: 0;
-      left: -1220px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -178,15 +182,23 @@
       border: 1px solid rgba(255, 0, 255, 0.4);
       border-radius: 16px;
       padding: 20px;
-      display: none;
-      transition: left 0.5s ease;
+      transition: all 0.5s ease;
+      left: -1220px;
       backdrop-filter: blur(12px);
-      box-shadow: 0 0 20px rgba(255, 0, 255, 0.274);
+      box-shadow: 0 0 20px rgba(0, 217, 255, 0.737);
       width: 30vw;
-
       &.active {
-        display: flex;
+        transition: left 0.5s ease;
         left: 0;
+        backdrop-filter: blur(50px);
+
+        .nav_menu-link {
+          font-size: 1.4rem !important;
+          margin: 10px;
+        }
+        #mapPin {
+          font-size: 2rem;
+        }
       }
 
       .nav_menu-item {

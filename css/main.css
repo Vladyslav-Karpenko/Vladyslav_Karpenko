@@ -34,12 +34,12 @@ body {
   font-family: "Rajdhani", sans-serif;
   font-size: 16px;
   height: 100vh;
-  background: linear-gradient(135deg, #0a0020, #12003a, #001f4d, #220042);
-  background-size: 400% 400%;
-  animation: midnightNeon 15s ease infinite;
+  background: linear-gradient(135deg, #01071a, #001f33, #003366, #001a2b);
+  background-size: 600% 600%;
+  animation: darkNeonFlow 50s ease-in-out infinite;
 }
 
-@keyframes midnightNeon {
+@keyframes darkNeonFlow {
   0% {
     background-position: 0% 50%;
   }
@@ -50,6 +50,14 @@ body {
     background-position: 0% 50%;
   }
 }
+.neon-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 40% 40%, rgba(0, 54, 102, 0.2), transparent 70%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
 .rajdhani-light {
   font-family: "Rajdhani", sans-serif;
   font-weight: 300;
@@ -106,7 +114,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding-top: 10px;
+  padding-top: 20px;
   position: relative;
   top: 0;
 }
@@ -158,6 +166,11 @@ body {
   justify-content: space-evenly;
   align-items: center;
   padding: 15px 5px;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.737);
+  transition: all 0.5s ease;
+}
+.header-page .nav_menu .nav_menu-list:hover {
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.737);
 }
 .header-page .nav_menu .nav_menu-list .nav_menu-item {
   padding: 25px 10px;
@@ -188,6 +201,11 @@ body {
   cursor: pointer;
   margin: 0 15px;
   width: 50px;
+  transition: scale 0.5s ease;
+}
+.header-page .header-btn .header-btn_contact:hover,
+.header-page .header-btn .header-btn_cv:hover {
+  scale: 1.2;
 }
 
 .container_header-btn {
@@ -197,9 +215,6 @@ body {
 }
 
 @media screen and (max-width: 907px) {
-  .header-page {
-    grid-template-columns: auto auto auto;
-  }
   .nav_menu {
     z-index: 1000;
     grid-row: 1/2;
@@ -241,7 +256,6 @@ body {
   .nav_menu .nav_menu-list {
     position: absolute;
     top: 0;
-    left: -1220px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -250,16 +264,25 @@ body {
     border: 1px solid rgba(255, 0, 255, 0.4);
     border-radius: 16px;
     padding: 20px;
-    display: none;
-    transition: left 0.5s ease;
+    transition: all 0.5s ease;
+    left: -1220px;
     -webkit-backdrop-filter: blur(12px);
             backdrop-filter: blur(12px);
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.274);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.737);
     width: 30vw;
   }
   .nav_menu .nav_menu-list.active {
-    display: flex;
+    transition: left 0.5s ease;
     left: 0;
+    -webkit-backdrop-filter: blur(50px);
+            backdrop-filter: blur(50px);
+  }
+  .nav_menu .nav_menu-list.active .nav_menu-link {
+    font-size: 1.4rem !important;
+    margin: 10px;
+  }
+  .nav_menu .nav_menu-list.active #mapPin {
+    font-size: 2rem;
   }
   .nav_menu .nav_menu-list .nav_menu-item {
     margin: 5px 0;
@@ -465,7 +488,13 @@ a .iframe-wrapper iframe {
   z-index: 1;
   color: #fff;
   border-radius: 16px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  transition: box-shadow 0.5s ease;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.737);
+}
+.main-content .main-content_card-about:hover {
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.737);
 }
 .main-content .main-content_card-about .main-content_photo {
   width: 200px;
@@ -473,6 +502,14 @@ a .iframe-wrapper iframe {
   border-radius: 50%;
   border: 1px solid #00ffff;
   margin-top: 5px;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.737);
+  transition: scale 0.5s ease;
+  cursor: pointer;
+}
+.main-content .main-content_card-about .main-content_photo:hover {
+  scale: 1.02;
 }
 @keyframes rotate {
   from {
@@ -530,7 +567,10 @@ a .iframe-wrapper iframe {
   height: 75px;
   margin-top: 15px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  box-shadow: 0 0 5px rgba(0, 217, 255, 0.737);
 }
 .main-content .container-skills .container-skills-list .container-skills_item h4,
 .main-content .container-skills .container-skills-list .container-projects_item h4,
@@ -554,6 +594,7 @@ a .iframe-wrapper iframe {
 .main-content .container-projects .container-projects-list .container-projects_item:hover {
   transform: scale(1.1);
   z-index: 1002;
+  box-shadow: 0 0 8px rgba(0, 217, 255, 0.737);
 }
 .main-content .container-skills .container-skills-list .container-skills_item img,
 .main-content .container-skills .container-skills-list .container-projects_item img,
