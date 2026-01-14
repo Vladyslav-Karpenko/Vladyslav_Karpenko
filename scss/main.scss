@@ -235,13 +235,16 @@ a {
       color: $secondary-color;
       font-weight: 500;
       padding: 0.1rem;
+      &::placeholder {
+        color: #5aefefa2;
+      }
     }
     button {
       align-self: center;
       color: $secondary-color;
+      font-weight: 600;
       border: 1px solid $secondary-color;
-      padding: 0.2rem;
-      width: 50%;
+      padding: 0.6rem;
       transition: box-shadow 0.5s ease;
       &:hover {
         box-shadow: 0 0 10px rgba(0, 217, 255, 0.737);
