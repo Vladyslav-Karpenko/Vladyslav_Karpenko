@@ -1,14 +1,27 @@
 @use "variable" as *;
+
+
+.main-location_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+  h3 {
+    color: $primary-color;
+  }
+  p {
+    color: $secondary-color;
+  }
+}
 .location_container {
   display: flex;
   justify-content: center;
-  margin: 25px auto;
-  padding: 25px;
+  width: 80vw;
 
   iframe {
     border-radius: 25px;
     padding: 15px;
     border: 5px solid $secondary-color;
-
   }
 }

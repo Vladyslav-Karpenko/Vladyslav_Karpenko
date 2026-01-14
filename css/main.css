@@ -109,7 +109,7 @@ body::before {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding-top: 20px;
+  height: 140px;
   position: relative;
   top: 0;
 }
@@ -299,11 +299,6 @@ body::before {
     text-shadow: 0 0 0px #ff00ff, 0 0 10px #00ffff;
   }
 }
-#header {
-  visibility: hidden;
-  height: 158px;
-}
-
 .footer {
   display: grid;
   grid-template-rows: 2fr 1fr;
@@ -386,11 +381,24 @@ body::before {
     width: 80%;
   }
 }
+.main-location_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+}
+.main-location_text h3 {
+  color: #ff3df2;
+}
+.main-location_text p {
+  color: #00eaff;
+}
+
 .location_container {
   display: flex;
   justify-content: center;
-  margin: 25px auto;
-  padding: 25px;
+  width: 80vw;
 }
 .location_container iframe {
   border-radius: 25px;
