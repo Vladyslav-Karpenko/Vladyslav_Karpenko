@@ -35,14 +35,6 @@ body {
   flex-direction: column;
 }
 
-.neon-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 40% 40%, rgba(0, 54, 102, 0.2), transparent 70%);
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
-
 .rajdhani-light {
   font-family: "Rajdhani", sans-serif;
   font-weight: 300;
