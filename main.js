@@ -132,39 +132,39 @@ enterBtn.addEventListener("click", () => {
 
 
 
-const header = document.querySelector('#header');
-if (header) {
-    fetch('header.html')
-        .then(response => response.text())
-        .then(html => {
-            header.innerHTML = html;
-            // ! Hamburger
-            const hamburger = document.getElementById("hamburger");
-            const navList = document.getElementById("navList");
+// const header = document.querySelector('#header');
+// if (header) {
+//     fetch('header.html')
+//         .then(response => response.text())
+//         .then(html => {
+//             header.innerHTML = html;
+//             // ! Hamburger
+//             const hamburger = document.getElementById("hamburger");
+//             const navList = document.getElementById("navList");
 
-            if (hamburger && navList) {
-                hamburger.addEventListener("click", () => {
-                    hamburger.classList.toggle("active");
-                    navList.classList.toggle("active");
-                });
-            }
-            // !Active link on active page
-            const currentPage = window.location.pathname.split('/').pop()
-            const linkLocation = document.querySelector('.link-location')
-            const linkHome = document.querySelector('.link-home')
+//             if (hamburger && navList) {
+//                 hamburger.addEventListener("click", () => {
+//                     hamburger.classList.toggle("active");
+//                     navList.classList.toggle("active");
+//                 });
+//             }
+//             // !Active link on active page
+//             const currentPage = window.location.pathname.split('/').pop()
+//             const linkLocation = document.querySelector('.link-location')
+//             const linkHome = document.querySelector('.link-home')
 
-            function setActiveLink() {
-                if (currentPage == 'location.html') {
-                    linkLocation.classList.add('nav_menu-link--active')
+//             function setActiveLink() {
+//                 if (currentPage == 'location.html') {
+//                     linkLocation.classList.add('nav_menu-link--active')
 
-                } else if (currentPage == 'index.html') {
-                    linkHome.classList.add('nav_menu-link--active')
-                }
-            }
-            setActiveLink()
-        })
-        .catch(err => console.error('Ошибка при загрузке header:', err));
-}
+//                 } else if (currentPage == 'index.html') {
+//                     linkHome.classList.add('nav_menu-link--active')
+//                 }
+//             }
+//             setActiveLink()
+//         })
+//         .catch(err => console.error('Ошибка при загрузке header:', err));
+// }
 
 
 // ! Photo rotate
