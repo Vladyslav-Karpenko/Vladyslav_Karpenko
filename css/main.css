@@ -301,6 +301,7 @@ body::before {
 }
 #header {
   visibility: hidden;
+  height: 158px;
 }
 
 .footer {
