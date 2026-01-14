@@ -137,7 +137,6 @@ footerYear.textContent = `© ${new Date().getFullYear()} Vladyslav Karpenko`
 // ! Subscribe modal
 
 const isSubscribe = localStorage.getItem('subscribe')
-console.log(isSubscribe);
 
 const path = window.location.pathname
 const runSubscribeModal = () => {
