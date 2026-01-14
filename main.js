@@ -132,19 +132,22 @@ footerYear.textContent = `© ${new Date().getFullYear()} Vladyslav Karpenko`
 
 // ! Subscribe modal
 const questionModal = document.querySelector('#question_modal')
-const closeModal = document.createElement('span')
-closeModal.textContent = `\u00D7`;
-closeModal.id = 'closeModal'
-questionModal.prepend(closeModal)
+const closeModalBtn = document.createElement('span')
+closeModalBtn.textContent = `\u00D7`;
+closeModalBtn.id = 'closeModal'
+questionModal.prepend(closeModalBtn)
 setTimeout(() => {
     questionModal.style.bottom = 0
 }, 5000)
 
 // !modal question close
-
-closeModal.addEventListener('click', () => {
+const hideModal = () => {
     questionModal.style.right = '-1000px'
-})
+
+
+}
+
+closeModalBtn.addEventListener('click', hideModal)
 
 // ! Subscribe form sending
 
@@ -173,4 +176,5 @@ form.addEventListener('submit', async (e) => {
     } catch (error) {
         alert('⚠️ Network error. Try later.');
     }
+    hideModal()
 });

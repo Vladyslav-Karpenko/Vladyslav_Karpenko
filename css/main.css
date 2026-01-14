@@ -31,11 +31,12 @@ ul {
 body {
   font-family: "Rajdhani", sans-serif;
   font-size: 16px;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(-45deg, #05010f, #0a0833, #1010a0, #07051a);
   background-size: 400% 400%;
   animation: gradientBG 18s ease infinite;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes gradientBG {
@@ -310,6 +311,7 @@ body {
   margin: 0 auto;
   color: wheat;
   gap: 15px;
+  margin-top: auto;
 }
 .footer .footer_title {
   font-weight: 400;
@@ -470,6 +472,7 @@ a .iframe-wrapper iframe {
 }
 
 .content {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -680,7 +683,7 @@ a .iframe-wrapper iframe {
   color: #00eaff;
   padding: 1rem 0 0 0;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 .question_modal .question_modal-form {
   display: flex;
@@ -709,7 +712,7 @@ a .iframe-wrapper iframe {
   box-shadow: 0 0 10px rgba(0, 217, 255, 0.737);
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 520px) {
   .question_modal {
     width: 70vw;
   }
