@@ -650,7 +650,6 @@ a .iframe-wrapper iframe {
   border: 0.2px solid rgb(7, 131, 131);
   border-radius: 10px;
   z-index: 222222;
-  background-color: rgba(0, 255, 255, 0.186);
   margin: 15px;
   transition: all 0.5s ease;
   display: flex;
