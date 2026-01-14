@@ -31,15 +31,3 @@ body {
     background: linear-gradient(-45deg, #05010f, #0a0833, #1010a0, #07051a);
   }
 }
-
-.neon-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 40% 40%,
-    rgba(0, 54, 102, 0.2),
-    transparent 70%
-  );
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
