@@ -719,14 +719,16 @@ a .iframe-wrapper iframe {
 .question_modal .questin_modal-title {
   color: #ff3df2;
   padding: 1.5rem 0 0 0;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.1rem;
 }
 .question_modal .questin_modal-text {
   text-align: center;
   padding: 0.5rem 1rem;
-  color: #00eaff;
   font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 8px rgba(0, 255, 255, 0.3);
+  letter-spacing: 2px;
 }
 .question_modal .question_modal-form {
   display: flex;
@@ -740,9 +742,10 @@ a .iframe-wrapper iframe {
 }
 .question_modal .question_modal-form input {
   text-align: center;
-  color: #00eaff;
+  color: white;
+  font-size: 1rem;
   font-weight: 500;
-  padding: 0.1rem;
+  padding: 0.2rem;
   width: 80%;
 }
 .question_modal .question_modal-form input::-moz-placeholder {
@@ -754,7 +757,8 @@ a .iframe-wrapper iframe {
 .question_modal .question_modal-form button {
   align-self: center;
   color: #00eaff;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 1.2rem;
   border: 2px solid #00eaff;
   padding: 0.6rem;
   transition: box-shadow 0.5s ease;

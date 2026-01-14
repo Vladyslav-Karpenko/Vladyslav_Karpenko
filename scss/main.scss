@@ -219,14 +219,18 @@ a {
   .questin_modal-title {
     color: $primary-color;
     padding: 1.5rem 0 0 0;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.1rem;
   }
   .questin_modal-text {
     text-align: center;
     padding: 0.5rem 1rem;
-    color: $secondary-color;
+    // color: $secondary-color;
     font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4),
+          0 0 8px rgba(0, 255, 255, 0.3);
+          letter-spacing: 2px;
   }
   .question_modal-form {
     display: flex;
@@ -239,9 +243,10 @@ a {
     padding: 1rem;
     input {
       text-align: center;
-      color: $secondary-color;
+      color: white;
+      font-size: 1rem;
       font-weight: 500;
-      padding: 0.1rem;
+      padding: 0.2rem;
       width: 80%;
       &::placeholder {
         color: #5aefefa2;
@@ -250,7 +255,8 @@ a {
     button {
       align-self: center;
       color: $secondary-color;
-      font-weight: 700;
+      font-weight: 600;
+      font-size: 1.2rem;
       border: 2px solid $secondary-color;
       padding: 0.6rem;
       transition: box-shadow 0.5s ease;
