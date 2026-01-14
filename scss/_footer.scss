@@ -54,6 +54,13 @@
       background: hsla(0, 0%, 100%, 0.1);
       text-align: center;
       resize: none;
+
+      &::placeholder {
+        text-align: center;
+        padding: 30px 0;
+        letter-spacing: 2px;
+        font-size: 1rem;
+      }
       &:focus {
         border-color: rgba(236, 72, 153, 0.8);
         box-shadow: 0 0 10px rgba(236, 72, 153, 0.5),

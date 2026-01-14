@@ -44,8 +44,6 @@ a {
   flex: 1;
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
-  // height: 100%;
 
   .main-content {
     display: flex;
@@ -53,8 +51,6 @@ a {
     justify-content: center;
     align-content: center;
     width: 100%;
-    // margin: 35px auto;
-    // position: relative;
 
     .main-content_card-about {
       display: flex;
@@ -80,7 +76,6 @@ a {
         width: 200px;
         margin: 10px;
         border-radius: 50%;
-        // border: 0.1px none $secondary-color;
         margin-top: 5px;
         backdrop-filter: blur(15px);
         box-shadow: 0 0 8px rgba(0, 217, 255, 0.737);
@@ -194,8 +189,8 @@ a {
   position: fixed;
   right: 0;
   bottom: -250px;
-  width: 35vw;
-  border: 0.5px solid $secondary-color;
+  width: 400px;
+  border: 1px solid $secondary-color;
   border-radius: 10px;
   z-index: 222222;
   background-color: rgba(0, 255, 255, 0.2);
@@ -223,14 +218,22 @@ a {
   }
   .questin_modal-title {
     color: $primary-color;
-    padding: 1rem 0 0 0;
+    padding: 1.5rem 0 0 0;
     font-weight: 600;
     font-size: 1.1rem;
+
+  }
+  .questin_modal-text {
+    text-align: center;
+    padding: 0.5rem 1rem;
+    color: $secondary-color;
+    font-weight: 400;
   }
   .question_modal-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
     gap: 1rem;
     width: 90%;
@@ -240,6 +243,7 @@ a {
       color: $secondary-color;
       font-weight: 500;
       padding: 0.1rem;
+      width: 80%;
       &::placeholder {
         color: #5aefefa2;
       }
@@ -247,10 +251,11 @@ a {
     button {
       align-self: center;
       color: $secondary-color;
-      font-weight: 600;
-      border: 1px solid $secondary-color;
+      font-weight: 700;
+      border: 2px solid $secondary-color;
       padding: 0.6rem;
       transition: box-shadow 0.5s ease;
+      cursor: pointer;
       &:hover {
         box-shadow: 0 0 10px rgba(0, 217, 255, 0.737);
       }
@@ -261,5 +266,8 @@ a {
 @media screen and (max-width: 520px) {
   .question_modal {
     width: 70vw;
+    .questin_modal-text {
+      font-size: 1rem;
+    }
   }
 }
