@@ -9,10 +9,14 @@ a {
 ul {
   list-style: none;
 }
+input,
+textarea,
+button,
 body {
-  font-family: $font-main;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif !important;
+}
+body {
   font-size: 16px;
-  // min-height: 100vh;
   display: flex;
   flex-direction: column;
 

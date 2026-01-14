@@ -44,7 +44,7 @@
     display: grid;
     align-items: center;
     position: relative;
-    margin: 3px 10px;
+    margin: 3px 5px;
     padding: 10px;
     z-index: 2;
 
@@ -53,6 +53,8 @@
       justify-content: space-between;
       cursor: pointer;
       z-index: 1001;
+    margin-left: 10px;
+
 
       span {
         height: 3px;
@@ -107,7 +109,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+a{
+  display: flex;
+  align-self: center;
+  button {
+    height: 52px !important;
+    width: 52px !important;
+  }
+}
     .header-btn_contact,
     .header-btn_cv {
       height: 50px;
@@ -117,7 +126,6 @@
       font-size: medium;
       cursor: pointer;
       margin: 0 15px;
-      width: 50px;
       transition: scale 0.5s ease;
       font-weight: 600;
 
@@ -158,22 +166,6 @@
         box-shadow: 0 0 8px #ff00ff, 0 0 16px #00ffff;
         transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       }
-
-      &.active {
-        transform: rotate(180deg);
-        span:nth-child(1) {
-          transform: translateY(9px) rotate(45deg);
-          box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
-        }
-        span:nth-child(2) {
-          opacity: 0;
-          transform: scale(0);
-        }
-        span:nth-child(3) {
-          transform: translateY(-9px) rotate(-45deg);
-          box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
-        }
-      }
     }
 
     .nav_menu-list {
@@ -194,11 +186,11 @@
       width: 30vw;
       &.active {
         transition: left 0.5s ease;
-        left: 0;
+        left: 10px;
         backdrop-filter: blur(50px);
 
         .nav_menu-link {
-          font-size: 1.4rem !important;
+          font-size: 1rem !important;
           margin: 10px;
         }
         #mapPin {

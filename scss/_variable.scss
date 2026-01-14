@@ -1,7 +1,6 @@
 $primary-color: #ff3df2;
 $secondary-color: #00eaff;
 
-
 $glass-bg: rgba(255, 255, 255, 0.1);
 $glass-border: rgba(255, 255, 255, 0.2);
 $text-color: #ffffff;
@@ -20,4 +19,15 @@ $font-main: "Rajdhani", sans-serif;
 }
 .secondary-font {
   color: $secondary-color;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
