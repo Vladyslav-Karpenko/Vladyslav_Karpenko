@@ -31,7 +31,6 @@ ul {
 body {
   font-family: "Rajdhani", sans-serif;
   font-size: 16px;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
