@@ -188,7 +188,7 @@ a {
 .question_modal {
   position: fixed;
   right: 0;
-  bottom: -250px;
+  bottom: -1500px;
   width: 400px;
   border: 1px solid $secondary-color;
   border-radius: 10px;
@@ -221,7 +221,6 @@ a {
     padding: 1.5rem 0 0 0;
     font-weight: 600;
     font-size: 1.1rem;
-
   }
   .questin_modal-text {
     text-align: center;

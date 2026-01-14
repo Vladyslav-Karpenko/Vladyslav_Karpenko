@@ -695,7 +695,7 @@ a .iframe-wrapper iframe {
 .question_modal {
   position: fixed;
   right: 0;
-  bottom: -250px;
+  bottom: -1500px;
   width: 400px;
   border: 1px solid #00eaff;
   border-radius: 10px;
