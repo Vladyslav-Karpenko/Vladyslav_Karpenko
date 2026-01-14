@@ -299,6 +299,10 @@ body::before {
     text-shadow: 0 0 0px #ff00ff, 0 0 10px #00ffff;
   }
 }
+#header {
+  visibility: hidden;
+}
+
 .footer {
   display: grid;
   grid-template-rows: 2fr 1fr;
