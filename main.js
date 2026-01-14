@@ -183,7 +183,14 @@ if (myPhoto) {
 const footerYear = document.querySelector('#propYear')
 footerYear.textContent = `© ${new Date().getFullYear()} Vladyslav Karpenko`
 
+// ! Height auto
 
+function setBodyHeight() {
+    document.body.style.height = window.innerHeight + 'px';
+}
+
+window.addEventListener('resize', setBodyHeight);
+setBodyHeight();
 
 
 
