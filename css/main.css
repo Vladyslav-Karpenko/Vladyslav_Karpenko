@@ -473,7 +473,7 @@ a .iframe-wrapper iframe {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  height: 100%;
 }
 .content .main-content {
   display: flex;
@@ -642,4 +642,75 @@ a .iframe-wrapper iframe {
 #enterBtn {
   position: relative;
   z-index: 3;
+}
+
+.question_modal {
+  position: fixed;
+  right: 0;
+  bottom: -250px;
+  width: 40vw;
+  border: 0.5px solid #00eaff;
+  border-radius: 10px;
+  z-index: 222222;
+  background-color: rgba(0, 255, 255, 0.2);
+  margin: 15px;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  box-shadow: 0 0 5px rgba(0, 217, 255, 0.737);
+}
+.question_modal #closeModal {
+  position: absolute;
+  right: 0;
+  top: -1rem;
+  font-size: 3rem;
+  color: #00eaff;
+  cursor: pointer;
+  transition: scale 0.5s ease;
+}
+.question_modal #closeModal:hover {
+  scale: 1.1;
+}
+.question_modal:hover {
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.737);
+}
+.question_modal .questin_modal-title {
+  color: #00eaff;
+  padding: 1rem 0 0 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.question_modal .question_modal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  width: 90%;
+  padding: 1rem;
+}
+.question_modal .question_modal-form input {
+  text-align: center;
+  color: #00eaff;
+  font-weight: 500;
+  padding: 0.1rem;
+}
+.question_modal .question_modal-form button {
+  align-self: center;
+  color: #00eaff;
+  border: 1px solid #00eaff;
+  padding: 0.2rem;
+  width: 50%;
+  transition: box-shadow 0.5s ease;
+}
+.question_modal .question_modal-form button:hover {
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.737);
+}
+
+@media screen and (max-width: 412px) {
+  .question_modal {
+    width: 70vw;
+  }
 }

@@ -15,10 +15,10 @@ body {
   height: 100vh;
   background: linear-gradient(
     -45deg,
-    #05010f,   /* почти чёрный синий */
-    #0a0833,   /* глубокий navy */
-    #1010a0,   /* неоновый акцент */
-    #07051a    /* тёмный возврат */
+    #05010f,
+    /* почти чёрный синий */ #0a0833,
+    /* глубокий navy */ #1010a0,
+    /* неоновый акцент */ #07051a /* тёмный возврат */
   );
   background-size: 400% 400%;
   animation: gradientBG 18s ease infinite;
@@ -26,9 +26,15 @@ body {
 }
 
 @keyframes gradientBG {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .neon-overlay {

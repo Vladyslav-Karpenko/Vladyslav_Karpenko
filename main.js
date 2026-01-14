@@ -130,4 +130,47 @@ footerYear.textContent = `© ${new Date().getFullYear()} Vladyslav Karpenko`
 
 
 
+// ! Subscribe modal
+const questionModal = document.querySelector('#question_modal')
+const closeModal = document.createElement('span')
+closeModal.textContent = `\u00D7`;
+closeModal.id = 'closeModal'
+questionModal.prepend(closeModal)
+setTimeout(() => {
+    questionModal.style.bottom = 0
+}, 5000)
 
+// !modal question close
+
+closeModal.addEventListener('click', () => {
+    questionModal.style.right = '-1000px'
+})
+
+// ! Subscribe form sending
+
+const form = document.getElementById('subscribeForm');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            form.reset();
+            alert('✅ Subscription successful!');
+        } else {
+            alert('❌ Something went wrong. Try again.');
+        }
+    } catch (error) {
+        alert('⚠️ Network error. Try later.');
+    }
+});
