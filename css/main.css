@@ -699,8 +699,8 @@ a .iframe-wrapper iframe {
 }
 .question_modal #closeModal {
   position: absolute;
-  right: 0;
-  top: -1rem;
+  right: 2px;
+  top: -10px;
   font-size: 3rem;
   color: #00eaff;
   cursor: pointer;
