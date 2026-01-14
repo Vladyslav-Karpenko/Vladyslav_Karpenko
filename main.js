@@ -1,3 +1,56 @@
+// ! Subscribe modal
+
+const isSubscribe = localStorage.getItem('subscribe')
+const path = window.location.pathname
+const runModalSubscribe = () => {
+    if (!isSubscribe && (path.endsWith('index.html') || path === '/')) {
+        const questionModal = document.querySelector('#question_modal')
+        const closeModalBtn = document.createElement('span')
+        closeModalBtn.textContent = `\u00D7`;
+        closeModalBtn.id = 'closeModal'
+        questionModal.prepend(closeModalBtn)
+        setTimeout(() => {
+            questionModal.style.bottom = 0
+        }, 5000)
+        // !modal question close
+        const hideModal = () => {
+            questionModal.style.right = '-1000px'
+        }
+
+        closeModalBtn.addEventListener('click', hideModal)
+
+        // ! Subscribe form sending
+
+        const form = document.getElementById('subscribeForm');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    form.reset();
+                    localStorage.setItem('subscribe', true)
+                    alert('✅ Subscription successful!');
+                } else {
+                    alert('❌ Something went wrong. Try again.');
+                }
+            } catch (error) {
+                alert('⚠️ Network error. Try later.');
+            }
+            hideModal()
+        });
+    }
+}
 
 // !Welcome screen
 const enterBtn = document.getElementById("enterBtn");
@@ -8,6 +61,7 @@ if (localStorage.getItem("entered")) {
     intro.style.display = "none";
     content.classList.remove("hidden");
     document.body.style.overflow = "auto";
+    runModalSubscribe()
 } else {
     // ! Matrix effect 
     document.body.style.overflow = 'hidden';
@@ -64,6 +118,7 @@ let matrixInterval = setInterval(drawMatrix, 33);
 enterBtn.addEventListener("click", () => {
     clearInterval(matrixInterval);
     intro.style.opacity = "0";
+    runModalSubscribe()
     setTimeout(() => {
         intro.style.display = "none";
         content.classList.remove("hidden");
@@ -72,7 +127,6 @@ enterBtn.addEventListener("click", () => {
         bgMusic.volume = 0.6;
         bgMusic.play().catch((err) => console.log("Music play blocked:", err));
         localStorage.setItem("entered", "true");
-        runSubscribeModal()
     }, 1000);
 });
 
@@ -92,7 +146,6 @@ if (header) {
                 hamburger.addEventListener("click", () => {
                     hamburger.classList.toggle("active");
                     navList.classList.toggle("active");
-
                 });
             }
             // !Active link on active page
@@ -133,63 +186,5 @@ footerYear.textContent = `© ${new Date().getFullYear()} Vladyslav Karpenko`
 
 
 
-// ! Subscribe modal
-
-const isSubscribe = localStorage.getItem('subscribe')
-
-const path = window.location.pathname
-const runSubscribeModal = () => {
-    if (!isSubscribe) {
-        if (path.endsWith('index.html') || path === '/' || !isSubscribe) {
-            const questionModal = document.querySelector('#question_modal')
-            const closeModalBtn = document.createElement('span')
-            closeModalBtn.textContent = `\u00D7`;
-            closeModalBtn.id = 'closeModal'
-            questionModal.prepend(closeModalBtn)
-            setTimeout(() => {
-                questionModal.style.bottom = 0
-            }, 5000)
-
-            // !modal question close
-            const hideModal = () => {
-                questionModal.style.right = '-1000px'
 
 
-            }
-
-            closeModalBtn.addEventListener('click', hideModal)
-
-            // ! Subscribe form sending
-
-            const form = document.getElementById('subscribeForm');
-
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-
-                const formData = new FormData(form);
-
-                try {
-                    const response = await fetch(form.action, {
-                        method: form.method,
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    if (response.ok) {
-                        form.reset();
-                        localStorage.setItem('subscribe', true)
-                        alert('✅ Subscription successful!');
-                    } else {
-                        alert('❌ Something went wrong. Try again.');
-                    }
-                } catch (error) {
-                    alert('⚠️ Network error. Try later.');
-                }
-                hideModal()
-            });
-        }
-
-    }
-}

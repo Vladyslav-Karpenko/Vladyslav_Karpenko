@@ -488,7 +488,7 @@ a .iframe-wrapper iframe {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 350px;
+  max-width: 350px;
   padding: 25px;
   text-align: center;
   margin: 15px auto;
