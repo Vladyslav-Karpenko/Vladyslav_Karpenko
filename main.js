@@ -10,7 +10,7 @@ if (localStorage.getItem("entered")) {
     document.body.style.overflow = "auto";
 } else {
     // ! Matrix effect 
-
+    document.body.style.overflow = 'hidden';
     const canvas = document.getElementById("matrixCanvas");
     const ctx = canvas.getContext("2d");
 
@@ -106,7 +106,6 @@ if (header) {
 
                 } else if (currentPage == 'index.html') {
                     linkHome.classList.add('nav_menu-link--active')
-                    runSubscribeModal()
                 }
             }
             setActiveLink()
