@@ -12,7 +12,7 @@
   }
 }
 .header-logo {
-  filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
+  filter: drop-shadow(0 0 0 #ff00ff) drop-shadow(0 0 10px #00ffff);
   justify-content: center;
 }
 .header-page {
@@ -36,6 +36,8 @@
     .header-logo_title-rank {
       color: $secondary-color;
       text-align: center;
+      font-weight: 400;
+      font-size: 1rem;
     }
   }
   .nav_menu {
@@ -88,13 +90,14 @@
         .nav_menu-link {
           color: $secondary-color;
           text-align: center;
+          transition: all 0.5s ease;
+          &:hover {
+            filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
+          }
         }
         .nav_menu-link--active {
           color: $primary-color;
           font-weight: 800;
-        }
-        .nav_menu-link:hover {
-          filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #00ffff);
         }
       }
     }
@@ -116,6 +119,8 @@
       margin: 0 15px;
       width: 50px;
       transition: scale 0.5s ease;
+      font-weight: 600;
+
       &:hover {
         scale: 1.2;
       }
@@ -205,15 +210,16 @@
         margin: 5px 0;
         width: 100%;
         padding: 10px !important ;
+
         .nav_menu-link {
           color: #00ffff;
           font-size: 14px;
           text-decoration: none;
-          transition: all 0.3s ease;
           justify-content: center;
+          transition: all 0.5s ease;
 
           &:hover {
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+            text-shadow: 0 0 0px #ff00ff, 0 0 10px #00ffff;
           }
         }
       }

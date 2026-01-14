@@ -7,6 +7,7 @@
 @use "location" as *;
 @use "test" as *;
 
+// Grayscale on links wrappers and iframe settings
 li,
 a {
   color: #00ffff;
@@ -73,12 +74,11 @@ a {
       width: 200px;
       margin: 10px;
       border-radius: 50%;
-      border: 1px solid $secondary-color;
+      // border: 0.1px none $secondary-color;
       margin-top: 5px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 0 10px rgba(0, 217, 255, 0.737);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 8px rgba(0, 217, 255, 0.737);
       transition: scale 0.5s ease;
-
       cursor: pointer;
       &:hover {
         scale: 1.02;
@@ -94,12 +94,14 @@ a {
     }
     .main-content_card-title {
       margin-top: 15px;
-      font-weight: 400;
+      font-weight: 500;
+      font-size: 1.5rem;
     }
     .main-content_card-text {
       padding: 15px;
-      font-size: 15px;
+      font-size: 1rem;
       color: $text-color;
+      font-weight: 300;
     }
   }
   .container-skills,
@@ -112,6 +114,7 @@ a {
     .container-skills_title,
     .container-projects_title {
       margin: 15px 0;
+      font-size: 1.5rem;
       font-weight: 500;
     }
     .container-skills-list,
@@ -134,11 +137,13 @@ a {
         transition: all 0.2s ease;
         backdrop-filter: blur(50px);
         box-shadow: 0 0 5px rgba(0, 217, 255, 0.737);
+        font-weight: 500;
 
         h4 {
           z-index: 2;
           position: absolute;
           top: -20px;
+          font-weight: 500;
         }
 
         &:hover {
