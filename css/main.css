@@ -31,6 +31,7 @@ ul {
 body {
   font-family: "Rajdhani", sans-serif;
   font-size: 16px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -647,9 +648,10 @@ a .iframe-wrapper iframe {
   right: 0;
   bottom: -250px;
   width: 35vw;
-  border: 0.2px solid rgb(7, 131, 131);
+  border: 0.5px solid #00eaff;
   border-radius: 10px;
   z-index: 222222;
+  background-color: rgba(0, 255, 255, 0.2);
   margin: 15px;
   transition: all 0.5s ease;
   display: flex;

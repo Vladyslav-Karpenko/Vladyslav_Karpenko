@@ -191,10 +191,10 @@ a {
   right: 0;
   bottom: -250px;
   width: 35vw;
-  border: 0.2px solid rgb(7, 131, 131);
+  border: 0.5px solid $secondary-color;
   border-radius: 10px;
   z-index: 222222;
-  // background-color: rgba(0, 255, 255, 0.186);
+  background-color: rgba(0, 255, 255, 0.2);
   margin: 15px;
   transition: all 0.5s ease;
   display: flex;
