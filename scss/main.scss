@@ -45,7 +45,7 @@ a {
   display: flex;
   flex-direction: column;
   // justify-content: space-between;
-  height: 100%;
+  // height: 100%;
 
   .main-content {
     display: flex;
@@ -53,8 +53,8 @@ a {
     justify-content: center;
     align-content: center;
     width: 100%;
-    margin: 35px auto;
-    position: relative;
+    // margin: 35px auto;
+    // position: relative;
 
     .main-content_card-about {
       display: flex;
