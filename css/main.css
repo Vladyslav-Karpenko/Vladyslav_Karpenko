@@ -34,16 +34,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background: linear-gradient(-45deg, #05010f, #0a0833, #1010a0, #07051a);
-}
 
 .neon-overlay {
   position: absolute;
