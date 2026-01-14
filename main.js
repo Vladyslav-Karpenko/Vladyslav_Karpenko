@@ -191,7 +191,3 @@ function setBodyHeight() {
 
 window.addEventListener('resize', setBodyHeight);
 setBodyHeight();
-
-
-
-

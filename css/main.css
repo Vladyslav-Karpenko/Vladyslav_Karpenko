@@ -646,11 +646,11 @@ a .iframe-wrapper iframe {
   position: fixed;
   right: 0;
   bottom: -250px;
-  width: 40vw;
-  border: 0.5px solid #00eaff;
+  width: 35vw;
+  border: 0.2px solid rgb(7, 131, 131);
   border-radius: 10px;
   z-index: 222222;
-  background-color: rgba(0, 255, 255, 0.2);
+  background-color: rgba(0, 255, 255, 0.186);
   margin: 15px;
   transition: all 0.5s ease;
   display: flex;
@@ -704,7 +704,7 @@ a .iframe-wrapper iframe {
 .question_modal .question_modal-form button {
   align-self: center;
   color: #00eaff;
-  font-weight: 600;
+  font-weight: 500;
   border: 1px solid #00eaff;
   padding: 0.6rem;
   transition: box-shadow 0.5s ease;
