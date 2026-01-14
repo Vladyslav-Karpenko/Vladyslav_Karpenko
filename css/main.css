@@ -32,24 +32,20 @@ body {
   font-family: "Rajdhani", sans-serif;
   font-size: 16px;
   min-height: 100vh;
-  background: linear-gradient(-45deg, #05010f, #0a0833, #1010a0, #07051a);
-  background-size: 400% 400%;
-  animation: gradientBG 18s ease infinite;
   display: flex;
   flex-direction: column;
 }
-
-@keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(-45deg, #05010f, #0a0833, #1010a0, #07051a);
 }
+
 .neon-overlay {
   position: absolute;
   inset: 0;
