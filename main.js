@@ -131,54 +131,61 @@ footerYear.textContent = `© ${new Date().getFullYear()} Vladyslav Karpenko`
 
 
 // ! Subscribe modal
+
+const isSubscribe = localStorage.getItem('subscribe')
+console.log(isSubscribe);
+
 const path = window.location.pathname
-if (path.endsWith('index.html') || path === '/') {
-    const questionModal = document.querySelector('#question_modal')
-    const closeModalBtn = document.createElement('span')
-    closeModalBtn.textContent = `\u00D7`;
-    closeModalBtn.id = 'closeModal'
-    questionModal.prepend(closeModalBtn)
-    setTimeout(() => {
-        questionModal.style.bottom = 0
-    }, 5000)
+if (!isSubscribe) {
+    if (path.endsWith('index.html') || path === '/' || !isSubscribe) {
+        const questionModal = document.querySelector('#question_modal')
+        const closeModalBtn = document.createElement('span')
+        closeModalBtn.textContent = `\u00D7`;
+        closeModalBtn.id = 'closeModal'
+        questionModal.prepend(closeModalBtn)
+        setTimeout(() => {
+            questionModal.style.bottom = 0
+        }, 5000)
 
-    // !modal question close
-    const hideModal = () => {
-        questionModal.style.right = '-1000px'
+        // !modal question close
+        const hideModal = () => {
+            questionModal.style.right = '-1000px'
 
 
+        }
+
+        closeModalBtn.addEventListener('click', hideModal)
+
+        // ! Subscribe form sending
+
+        const form = document.getElementById('subscribeForm');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    form.reset();
+                    localStorage.setItem('subscribe', true)
+                    alert('✅ Subscription successful!');
+                } else {
+                    alert('❌ Something went wrong. Try again.');
+                }
+            } catch (error) {
+                alert('⚠️ Network error. Try later.');
+            }
+            hideModal()
+        });
     }
 
-    closeModalBtn.addEventListener('click', hideModal)
-
-    // ! Subscribe form sending
-
-    const form = document.getElementById('subscribeForm');
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-
-        try {
-            const response = await fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                form.reset();
-                alert('✅ Subscription successful!');
-            } else {
-                alert('❌ Something went wrong. Try again.');
-            }
-        } catch (error) {
-            alert('⚠️ Network error. Try later.');
-        }
-        hideModal()
-    });
 }
-
