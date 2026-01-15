@@ -183,6 +183,7 @@ body::before {
 }
 .header-page .nav_menu .nav_menu-list .nav_menu-item {
   padding: 25px 10px;
+  font-weight: 600;
 }
 .header-page .nav_menu .nav_menu-list .nav_menu-item .nav_menu-link {
   color: #00eaff;
@@ -547,10 +548,9 @@ a .iframe-wrapper iframe {
   margin: 10px;
   border-radius: 50%;
   margin-top: 5px;
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
-  box-shadow: 0 0 8px rgba(0, 217, 255, 0.737);
+  box-shadow: 0 0 18px rgba(0, 217, 255, 0.737);
   transition: scale 0.5s ease;
+  background: linear-gradient(-45deg, #05010f, #0a0833, #1010a0, #07051a);
   cursor: pointer;
 }
 .content .main-content .main-content_card-about .main-content_photo:hover {
@@ -612,17 +612,16 @@ a .iframe-wrapper iframe {
 .content .main-content .container-projects .container-projects-list .container-skills_item,
 .content .main-content .container-projects .container-projects-list .container-projects_item {
   display: flex;
-  justify-content: start;
   align-items: center;
   padding: 10px;
   height: 75px;
-  margin-top: 15px;
+  margin-top: 20px;
   cursor: pointer;
   transition: all 0.2s ease;
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
   box-shadow: 0 0 5px rgba(0, 217, 255, 0.737);
-  font-weight: 500;
+  font-weight: 600;
 }
 .content .main-content .container-skills .container-skills-list .container-skills_item h4,
 .content .main-content .container-skills .container-skills-list .container-projects_item h4,
@@ -634,8 +633,9 @@ a .iframe-wrapper iframe {
 .content .main-content .container-projects .container-projects-list .container-projects_item h4 {
   z-index: 2;
   position: absolute;
-  top: -20px;
-  font-weight: 500;
+  top: -25px;
+  font-weight: 600;
+  padding-bottom: 20px !important;
 }
 .content .main-content .container-skills .container-skills-list .container-skills_item:hover,
 .content .main-content .container-skills .container-skills-list .container-projects_item:hover,

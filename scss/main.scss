@@ -71,15 +71,14 @@ a {
       &:hover {
         box-shadow: 0 0 20px rgba(0, 217, 255, 0.737);
       }
-
       .main-content_photo {
         width: 200px;
         margin: 10px;
         border-radius: 50%;
         margin-top: 5px;
-        backdrop-filter: blur(15px);
-        box-shadow: 0 0 8px rgba(0, 217, 255, 0.737);
+        box-shadow: 0 0 18px rgba(0, 217, 255, 0.737);
         transition: scale 0.5s ease;
+        background: linear-gradient(-45deg, #05010f, #0a0833, #1010a0, #07051a);
         cursor: pointer;
         &:hover {
           scale: 1.02;
@@ -133,22 +132,22 @@ a {
         .container-skills_item,
         .container-projects_item {
           display: flex;
-          justify-content: start;
           align-items: center;
           padding: 10px;
           height: 75px;
-          margin-top: 15px;
+          margin-top: 20px;
           cursor: pointer;
           transition: all 0.2s ease;
           backdrop-filter: blur(50px);
           box-shadow: 0 0 5px rgba(0, 217, 255, 0.737);
-          font-weight: 500;
+          font-weight: 600;
 
           h4 {
             z-index: 2;
             position: absolute;
-            top: -20px;
-            font-weight: 500;
+            top: -25px;
+            font-weight: 600;
+            padding-bottom: 20px !important;
           }
 
           &:hover {
@@ -228,9 +227,8 @@ a {
     // color: $secondary-color;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.6);
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4),
-          0 0 8px rgba(0, 255, 255, 0.3);
-          letter-spacing: 2px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 8px rgba(0, 255, 255, 0.3);
+    letter-spacing: 2px;
   }
   .question_modal-form {
     display: flex;
