@@ -192,3 +192,16 @@ function setBodyHeight() {
 
 window.addEventListener('resize', setBodyHeight);
 setBodyHeight();
+
+// // !Achievements
+
+// const achievementsList = document.querySelector('#achievementsList')
+// achievementsList.style.display = 'flex'
+// // achievementsList.style.width = '70vw'
+
+
+// for (let i = 1; i < 5; i++) {
+//     const li = document.createElement('li')
+//     li.innerHTML = `<image src='achievements/${i}.jpg'></image>`
+//     achievementsList.appendChild(li)
+// }

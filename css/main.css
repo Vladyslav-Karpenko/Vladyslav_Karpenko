@@ -584,7 +584,7 @@ a .iframe-wrapper iframe {
   display: flex;
   flex-direction: column;
   width: 350px;
-  margin: 15px auto;
+  margin: 25px auto;
 }
 .content .main-content .container-skills .container-skills_title,
 .content .main-content .container-skills .container-projects_title,
@@ -613,10 +613,11 @@ a .iframe-wrapper iframe {
 .content .main-content .container-projects .container-projects-list .container-skills_item,
 .content .main-content .container-projects .container-projects-list .container-projects_item {
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 10px;
   height: 75px;
-  margin-top: 20px;
+  margin-top: 15px;
   cursor: pointer;
   transition: all 0.2s ease;
   -webkit-backdrop-filter: blur(50px);
@@ -636,7 +637,6 @@ a .iframe-wrapper iframe {
   position: absolute;
   top: -25px;
   font-weight: 600;
-  padding-bottom: 20px !important;
 }
 .content .main-content .container-skills .container-skills-list .container-skills_item:hover,
 .content .main-content .container-skills .container-skills-list .container-projects_item:hover,
@@ -665,6 +665,11 @@ a .iframe-wrapper iframe {
 .content .main-content .container-projects .container-skills-list .container-projects_item,
 .content .main-content .container-projects .container-projects-list .container-projects_item {
   justify-content: center;
+}
+.content .main-content .container-achievements {
+  height: 500px;
+  width: 350px;
+  margin: 25px auto;
 }
 
 #matrixCanvas {

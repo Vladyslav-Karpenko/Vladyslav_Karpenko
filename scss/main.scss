@@ -113,7 +113,7 @@ a {
       display: flex;
       flex-direction: column;
       width: 350px;
-      margin: 15px auto;
+      margin: 25px auto;
 
       .container-skills_title,
       .container-projects_title {
@@ -128,14 +128,14 @@ a {
         gap: 15px;
         margin: 15px auto;
         width: 100%;
-
         .container-skills_item,
         .container-projects_item {
           display: flex;
+          justify-content: center;
           align-items: center;
           padding: 10px;
           height: 75px;
-          margin-top: 20px;
+          margin-top: 15px;
           cursor: pointer;
           transition: all 0.2s ease;
           backdrop-filter: blur(50px);
@@ -147,7 +147,6 @@ a {
             position: absolute;
             top: -25px;
             font-weight: 600;
-            padding-bottom: 20px !important;
           }
 
           &:hover {
@@ -163,6 +162,12 @@ a {
           justify-content: center;
         }
       }
+    }
+    .container-achievements {
+      height: 500px;
+      width: 350px;
+      margin: 25px auto;
+
     }
   }
 }
