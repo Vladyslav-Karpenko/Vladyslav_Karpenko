@@ -424,6 +424,7 @@ body::before {
 }
 .main-location_text p {
   color: #00eaff;
+  margin-bottom: 5px;
 }
 
 .location_container {

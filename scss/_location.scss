@@ -6,12 +6,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 3rem auto;
+  margin:3rem auto;
   h3 {
     color: $primary-color;
   }
   p {
     color: $secondary-color;
+    margin-bottom: 5px;
   }
 }
 .location_container {
