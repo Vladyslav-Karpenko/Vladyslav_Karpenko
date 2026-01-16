@@ -19,6 +19,8 @@ const runModalSubscribe = () => {
 
         closeModalBtn.addEventListener('click', hideModal)
 
+
+
         // ! Subscribe form sending
 
         const form = document.getElementById('subscribeForm');
@@ -194,68 +196,94 @@ function setBodyHeight() {
 window.addEventListener('resize', setBodyHeight);
 setBodyHeight();
 
-// !Achievements
 
-const achievementsPath = [
-    { name: 'University Magistr', path: 'images/myAchievements/jpg/diplomUkraine1.jpg', link: 'images/myAchievements/pdf/Diplom.pdf' },
-    { name: 'University Magistr', path: 'images/myAchievements/jpg/dimplomUkraine2.jpg', link: 'images/myAchievements/pdf/Diplom.pdf' },
-    { name: 'Sololearn PythonInter', path: 'images/myAchievements/jpg/SololearnPyhtonInter.jpg', link: 'images/myAchievements/pdf/SololearnPythonIntermediate.pdf' },
-    { name: 'Sololearn PythonDev', path: 'images/myAchievements/jpg/SololearnPythonDev.jpg', link: 'images/myAchievements/pdf/SololearnPythonDeveloper.pdf' },
-    { name: 'Mimo Python', path: 'images/myAchievements/jpg/MimoPython.jpg', link: 'images/myAchievements/pdf/MimoPython.pdf' }]
-const achievementsContainer = document.querySelector('#achievements')
-const achievementsList = document.querySelector('#achievementsList')
-let paused = false
 
-achievementsPath.forEach((diplom) => {
-    const li = document.createElement('li')
-    li.innerHTML = `
+
+
+if (!path.endsWith('location.html')) {
+
+    // !Achievements
+
+    const achievementsPath = [
+        { name: 'University Magistr', path: 'images/myAchievements/jpg/diplomUkraine1.jpg', link: 'images/myAchievements/pdf/Diplom.pdf' },
+        { name: 'University Magistr', path: 'images/myAchievements/jpg/dimplomUkraine2.jpg', link: 'images/myAchievements/pdf/Diplom.pdf' },
+        { name: 'Sololearn PythonInter', path: 'images/myAchievements/jpg/SololearnPyhtonInter.jpg', link: 'images/myAchievements/pdf/SololearnPythonIntermediate.pdf' },
+        { name: 'Sololearn PythonDev', path: 'images/myAchievements/jpg/SololearnPythonDev.jpg', link: 'images/myAchievements/pdf/SololearnPythonDeveloper.pdf' },
+        { name: 'Mimo Python', path: 'images/myAchievements/jpg/MimoPython.jpg', link: 'images/myAchievements/pdf/MimoPython.pdf' }]
+    const achievementsContainer = document.querySelector('#achievements')
+    const achievementsList = document.querySelector('#achievementsList')
+    let paused = false
+
+    achievementsPath.forEach((diplom) => {
+        const li = document.createElement('li')
+        li.innerHTML = `
     <a href='${diplom.link}' target='_blank'>
     <img src='${diplom.path}' style='height: 300px;'>
     </a>
     `
-    li.children[0].children[0].style.borderRadius = '10px'
-    achievementsList.append(li)
+        li.children[0].children[0].style.borderRadius = '10px'
+        achievementsList.append(li)
 
-})
+    })
+    // ! ANIMATE RUNNING ACHIEVEMENTS LINE
 
-// ! ANIMATE RUNNING ACHIEVEMENTS LINE
-achievementsList.innerHTML += achievementsList.innerHTML
-let x = 0
-const speed = 1
-let halfWidth = 0
-const calculateWidth = () => {
-    halfWidth = achievementsList.scrollWidth / 2;
-};
+    achievementsList.innerHTML += achievementsList.innerHTML
+    let x = 0
+    const speed = 1
+    let halfWidth = 0
+    const calculateWidth = () => {
+        halfWidth = achievementsList.scrollWidth / 2;
+    };
 
-window.addEventListener('load', calculateWidth);
-window.addEventListener('resize', calculateWidth);
+    window.addEventListener('load', calculateWidth);
+    window.addEventListener('resize', calculateWidth);
 
-//  hover 
+    //  hover 
 
-achievementsList.addEventListener('mouseenter', () => {
-    if (window.innerWidth > 1024) {
-        paused = true
-    }
-})
-achievementsList.addEventListener('mouseleave', () => {
-    paused = false
-})
-
-
-
-
-const animate = () => {
-    if (!paused) {
-        x -= speed
-        if (Math.abs(x) >= halfWidth) {
-            x += halfWidth
+    achievementsList.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 1024) {
+            paused = true
         }
-        achievementsList.style.transform = `translateX(${x}px)`
-    }
-    requestAnimationFrame(animate)
-}
-animate()
+    })
+    achievementsList.addEventListener('mouseleave', () => {
+        paused = false
+    })
 
+
+
+
+    const animate = () => {
+        if (!paused) {
+            x -= speed
+            if (Math.abs(x) >= halfWidth) {
+                x += halfWidth
+            }
+            achievementsList.style.transform = `translateX(${x}px)`
+        }
+        requestAnimationFrame(animate)
+    }
+    animate()
+
+    // !ANIMATE SKILLS
+    const skills = document.querySelector('.container-skills-list')
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            skills.style.transform = 'translateX(0)'
+        }
+
+    })
+
+    // !ANIMATE PROJECTS
+
+    const projects = document.querySelector('.container-projects-list')
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+            projects.style.transform = 'translateX(0)'
+        }
+    })
+}
 // ! FORM IN FOOTER
 
 const formFooter = document.querySelector('#footerForm')
@@ -288,22 +316,3 @@ formFooter.addEventListener('submit', async function (event) {
     }, 10000)
 })
 
-// !ANIMATE SKILLS
-const skills = document.querySelector('.container-skills-list')
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        skills.style.transform = 'translateX(0)'
-    }
-
-})
-
-// !ANIMATE PROJECTS
-
-const projects = document.querySelector('.container-projects-list')
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 600) {
-        projects.style.transform = 'translateX(0)'
-    }
-})
