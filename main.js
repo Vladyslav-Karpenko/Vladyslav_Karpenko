@@ -250,3 +250,35 @@ const animate = () => {
 }
 animate()
 
+// ! FORM IN FOOTER
+
+const formFooter = document.querySelector('#footerForm')
+const formMessage = document.querySelector('#formMessage')
+
+formFooter.addEventListener('submit', async function (event) {
+    event.preventDefault()
+    const formDataFooter = new FormData(formFooter)
+    try {
+        const response = await fetch(formFooter.action, {
+            method: 'POST',
+            body: formDataFooter,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        if (response.ok) {
+            formMessage.textContent = 'Thank you! Your message has been sent.'
+            formFooter.reset()
+        } else {
+            const data = await response.json()
+            formMessage.textContent = data?.error || 'Error sending message. Please try again.';
+        }
+
+    } catch (error) {
+        formMessage.textContent = 'Network error. Please try later.'
+    }
+    setTimeout(() => {
+        formMessage.textContent = ''
+    }, 10000)
+})
+
