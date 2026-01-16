@@ -282,3 +282,22 @@ formFooter.addEventListener('submit', async function (event) {
     }, 10000)
 })
 
+// !ANIMATE SKILLS
+const skills = document.querySelector('.container-skills-list')
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        skills.style.transform = 'translateX(0)'
+    }
+
+})
+
+// !ANIMATE PROJECTS
+
+const projects = document.querySelector('.container-projects-list')
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) {
+        projects.style.transform = 'translateX(0)'
+    }
+})

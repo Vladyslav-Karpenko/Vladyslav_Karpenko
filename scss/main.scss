@@ -51,6 +51,7 @@ a {
     justify-content: center;
     align-content: center;
     width: 100%;
+    overflow: hidden;
 
     .main-content_card-about {
       display: flex;
@@ -122,6 +123,7 @@ a {
         margin: 15px 0;
         font-size: 1.5rem;
         font-weight: 600;
+        text-align: center;
       }
       .container-skills-list,
       .container-projects-list {
@@ -301,6 +303,18 @@ a {
       }
     }
   }
+}
+
+// ! ANIMATION MY SKILLS
+
+.container-skills-list {
+  transform: translateX(-1500px);
+  transition: transform 1.5s ease;
+}
+// ! ANIMATION MY PROJECTS
+.container-projects-list {
+  transform: translateX(1500px);
+  transition: transform 1.5s ease;
 }
 
 @media screen and (max-width: 520px) {
