@@ -196,9 +196,9 @@ a {
       flex-shrink: 0;
       padding: 0 2rem;
       font-size: 2rem;
-      cursor: pointer;
 
       img {
+        cursor: pointer;
         object-fit: cover;
       }
     }

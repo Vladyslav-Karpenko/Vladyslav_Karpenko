@@ -731,9 +731,9 @@ a .iframe-wrapper iframe {
   flex-shrink: 0;
   padding: 0 2rem;
   font-size: 2rem;
-  cursor: pointer;
 }
 .container-achievements .container-achievements-list li img {
+  cursor: pointer;
   -o-object-fit: cover;
      object-fit: cover;
 }

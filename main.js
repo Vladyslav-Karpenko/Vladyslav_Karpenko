@@ -231,12 +231,16 @@ window.addEventListener('load', calculateWidth);
 window.addEventListener('resize', calculateWidth);
 
 //  hover 
-achievementsList.addEventListener('mouseenter', () => {
-    paused = true
-})
-achievementsList.addEventListener('mouseleave', () => {
-    paused = false
-})
+if (window.innerWidth > 1024) {
+    achievementsList.addEventListener('mouseenter', () => {
+        paused = true
+    })
+    achievementsList.addEventListener('mouseleave', () => {
+        paused = false
+    })
+}
+
+
 
 const animate = () => {
     if (!paused) {
