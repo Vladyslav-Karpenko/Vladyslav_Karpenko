@@ -52,6 +52,7 @@ const runModalSubscribe = () => {
     }
 }
 
+
 // !Welcome screen
 const enterBtn = document.getElementById("enterBtn");
 const intro = document.getElementById("intro");
@@ -193,15 +194,59 @@ function setBodyHeight() {
 window.addEventListener('resize', setBodyHeight);
 setBodyHeight();
 
-// // !Achievements
+// !Achievements
 
-// const achievementsList = document.querySelector('#achievementsList')
-// achievementsList.style.display = 'flex'
-// // achievementsList.style.width = '70vw'
+const achievementsPath = [
+    { name: 'University Magistr', path: 'images/myAchievements/jpg/diplomUkraine1.jpg', link: 'images/myAchievements/pdf/Diplom.pdf' },
+    { name: 'University Magistr', path: 'images/myAchievements/jpg/dimplomUkraine2.jpg', link: 'images/myAchievements/pdf/Diplom.pdf' },
+    { name: 'Sololearn PythonInter', path: 'images/myAchievements/jpg/SololearnPyhtonInter.jpg', link: 'images/myAchievements/pdf/SololearnPythonIntermediate.pdf' },
+    { name: 'Sololearn PythonDev', path: 'images/myAchievements/jpg/SololearnPythonDev.jpg', link: 'images/myAchievements/pdf/SololearnPythonDeveloper.pdf' },
+    { name: 'Mimo Python', path: 'images/myAchievements/jpg/MimoPython.jpg', link: 'images/myAchievements/pdf/MimoPython.pdf' }]
+const achievementsContainer = document.querySelector('#achievements')
+const achievementsList = document.querySelector('#achievementsList')
+let paused = false
 
+achievementsPath.forEach((diplom) => {
+    const li = document.createElement('li')
+    li.innerHTML = `
+    <a href='${diplom.link}' target='_blank'>
+    <img src='${diplom.path}' style='height: 300px;'>
+    </a>
+    `
+    li.children[0].children[0].style.borderRadius = '10px'
+    achievementsList.append(li)
 
-// for (let i = 1; i < 5; i++) {
-//     const li = document.createElement('li')
-//     li.innerHTML = `<image src='achievements/${i}.jpg'></image>`
-//     achievementsList.appendChild(li)
-// }
+})
+
+// ! ANIMATE RUNNING ACHIEVEMENTS LINE
+achievementsList.innerHTML += achievementsList.innerHTML
+let x = 0
+const speed = 1
+let halfWidth = 0
+const calculateWidth = () => {
+    halfWidth = achievementsList.scrollWidth / 2;
+};
+
+window.addEventListener('load', calculateWidth);
+window.addEventListener('resize', calculateWidth);
+
+//  hover 
+achievementsList.addEventListener('mouseenter', () => {
+    paused = true
+})
+achievementsList.addEventListener('mouseleave', () => {
+    paused = false
+})
+
+const animate = () => {
+    if (!paused) {
+        x -= speed
+        if (Math.abs(x) >= halfWidth) {
+            x += halfWidth
+        }
+        achievementsList.style.transform = `translateX(${x}px)`
+    }
+    requestAnimationFrame(animate)
+}
+animate()
+

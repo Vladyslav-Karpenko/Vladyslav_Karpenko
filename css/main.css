@@ -580,16 +580,23 @@ a .iframe-wrapper iframe {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 8px rgba(0, 255, 255, 0.3);
 }
 .content .main-content .container-skills,
-.content .main-content .container-projects {
+.content .main-content .container-projects,
+.content .main-content .container-achievements {
   display: flex;
   flex-direction: column;
   width: 350px;
   margin: 25px auto;
+  position: relative;
 }
 .content .main-content .container-skills .container-skills_title,
 .content .main-content .container-skills .container-projects_title,
+.content .main-content .container-skills .container-achievements_title,
 .content .main-content .container-projects .container-skills_title,
-.content .main-content .container-projects .container-projects_title {
+.content .main-content .container-projects .container-projects_title,
+.content .main-content .container-projects .container-achievements_title,
+.content .main-content .container-achievements .container-skills_title,
+.content .main-content .container-achievements .container-projects_title,
+.content .main-content .container-achievements .container-achievements_title {
   margin: 15px 0;
   font-size: 1.5rem;
   font-weight: 600;
@@ -597,12 +604,33 @@ a .iframe-wrapper iframe {
 .content .main-content .container-skills .container-skills-list,
 .content .main-content .container-skills .container-projects-list,
 .content .main-content .container-projects .container-skills-list,
-.content .main-content .container-projects .container-projects-list {
+.content .main-content .container-projects .container-projects-list,
+.content .main-content .container-achievements .container-skills-list,
+.content .main-content .container-achievements .container-projects-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   margin: 15px auto;
   width: 100%;
+}
+.content .main-content .container-skills .container-skills-list .project_item-1,
+.content .main-content .container-skills .container-projects-list .project_item-1,
+.content .main-content .container-projects .container-skills-list .project_item-1,
+.content .main-content .container-projects .container-projects-list .project_item-1,
+.content .main-content .container-achievements .container-skills-list .project_item-1,
+.content .main-content .container-achievements .container-projects-list .project_item-1 {
+  transition: background-size 1s ease;
+  background: url("/images/myProjects/beerdim/beerdim_1.png") no-repeat center center;
+  background-size: cover;
+}
+.content .main-content .container-skills .container-skills-list .project_item-1:hover,
+.content .main-content .container-skills .container-projects-list .project_item-1:hover,
+.content .main-content .container-projects .container-skills-list .project_item-1:hover,
+.content .main-content .container-projects .container-projects-list .project_item-1:hover,
+.content .main-content .container-achievements .container-skills-list .project_item-1:hover,
+.content .main-content .container-achievements .container-projects-list .project_item-1:hover {
+  background: url("/images/myProjects/beerdim/beerdim_2.png") no-repeat center center;
+  background-size: cover;
 }
 .content .main-content .container-skills .container-skills-list .container-skills_item,
 .content .main-content .container-skills .container-skills-list .container-projects_item,
@@ -611,7 +639,11 @@ a .iframe-wrapper iframe {
 .content .main-content .container-projects .container-skills-list .container-skills_item,
 .content .main-content .container-projects .container-skills-list .container-projects_item,
 .content .main-content .container-projects .container-projects-list .container-skills_item,
-.content .main-content .container-projects .container-projects-list .container-projects_item {
+.content .main-content .container-projects .container-projects-list .container-projects_item,
+.content .main-content .container-achievements .container-skills-list .container-skills_item,
+.content .main-content .container-achievements .container-skills-list .container-projects_item,
+.content .main-content .container-achievements .container-projects-list .container-skills_item,
+.content .main-content .container-achievements .container-projects-list .container-projects_item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -632,7 +664,11 @@ a .iframe-wrapper iframe {
 .content .main-content .container-projects .container-skills-list .container-skills_item h4,
 .content .main-content .container-projects .container-skills-list .container-projects_item h4,
 .content .main-content .container-projects .container-projects-list .container-skills_item h4,
-.content .main-content .container-projects .container-projects-list .container-projects_item h4 {
+.content .main-content .container-projects .container-projects-list .container-projects_item h4,
+.content .main-content .container-achievements .container-skills-list .container-skills_item h4,
+.content .main-content .container-achievements .container-skills-list .container-projects_item h4,
+.content .main-content .container-achievements .container-projects-list .container-skills_item h4,
+.content .main-content .container-achievements .container-projects-list .container-projects_item h4 {
   z-index: 2;
   position: absolute;
   top: -25px;
@@ -645,7 +681,11 @@ a .iframe-wrapper iframe {
 .content .main-content .container-projects .container-skills-list .container-skills_item:hover,
 .content .main-content .container-projects .container-skills-list .container-projects_item:hover,
 .content .main-content .container-projects .container-projects-list .container-skills_item:hover,
-.content .main-content .container-projects .container-projects-list .container-projects_item:hover {
+.content .main-content .container-projects .container-projects-list .container-projects_item:hover,
+.content .main-content .container-achievements .container-skills-list .container-skills_item:hover,
+.content .main-content .container-achievements .container-skills-list .container-projects_item:hover,
+.content .main-content .container-achievements .container-projects-list .container-skills_item:hover,
+.content .main-content .container-achievements .container-projects-list .container-projects_item:hover {
   transform: scale(1.1);
   z-index: 1002;
   box-shadow: 0 0 8px rgba(0, 217, 255, 0.737);
@@ -657,19 +697,43 @@ a .iframe-wrapper iframe {
 .content .main-content .container-projects .container-skills-list .container-skills_item img,
 .content .main-content .container-projects .container-skills-list .container-projects_item img,
 .content .main-content .container-projects .container-projects-list .container-skills_item img,
-.content .main-content .container-projects .container-projects-list .container-projects_item img {
+.content .main-content .container-projects .container-projects-list .container-projects_item img,
+.content .main-content .container-achievements .container-skills-list .container-skills_item img,
+.content .main-content .container-achievements .container-skills-list .container-projects_item img,
+.content .main-content .container-achievements .container-projects-list .container-skills_item img,
+.content .main-content .container-achievements .container-projects-list .container-projects_item img {
   margin-right: 15px;
 }
 .content .main-content .container-skills .container-skills-list .container-projects_item,
 .content .main-content .container-skills .container-projects-list .container-projects_item,
 .content .main-content .container-projects .container-skills-list .container-projects_item,
-.content .main-content .container-projects .container-projects-list .container-projects_item {
+.content .main-content .container-projects .container-projects-list .container-projects_item,
+.content .main-content .container-achievements .container-skills-list .container-projects_item,
+.content .main-content .container-achievements .container-projects-list .container-projects_item {
   justify-content: center;
 }
-.content .main-content .container-achievements {
-  height: 500px;
-  width: 350px;
-  margin: 25px auto;
+
+.container-achievements {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 15px;
+}
+.container-achievements h2 {
+  margin-bottom: 15px;
+}
+.container-achievements .container-achievements-list {
+  display: flex;
+  will-change: transform;
+}
+.container-achievements .container-achievements-list li {
+  flex-shrink: 0;
+  padding: 0 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.container-achievements .container-achievements-list li img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #matrixCanvas {

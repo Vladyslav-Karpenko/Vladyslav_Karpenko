@@ -109,14 +109,16 @@ a {
       }
     }
     .container-skills,
-    .container-projects {
+    .container-projects,
+    .container-achievements {
       display: flex;
       flex-direction: column;
       width: 350px;
       margin: 25px auto;
-
+      position: relative;
       .container-skills_title,
-      .container-projects_title {
+      .container-projects_title,
+      .container-achievements_title {
         margin: 15px 0;
         font-size: 1.5rem;
         font-weight: 600;
@@ -128,6 +130,17 @@ a {
         gap: 15px;
         margin: 15px auto;
         width: 100%;
+        .project_item-1 {
+          transition: background-size 1s ease;
+          background: url("/images/myProjects/beerdim/beerdim_1.png") no-repeat
+            center center;
+          background-size: cover;
+          &:hover {
+            background: url("/images/myProjects/beerdim/beerdim_2.png")
+              no-repeat center center;
+            background-size: cover;
+          }
+        }
         .container-skills_item,
         .container-projects_item {
           display: flex;
@@ -163,15 +176,34 @@ a {
         }
       }
     }
-    .container-achievements {
-      height: 500px;
-      width: 350px;
-      margin: 25px auto;
+  }
+}
 
+// !Animated line
+.container-achievements {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 15px;
+  h2 {
+    margin-bottom: 15px;
+  }
+  .container-achievements-list {
+    display: flex;
+    will-change: transform;
+    li {
+      flex-shrink: 0;
+      padding: 0 2rem;
+      font-size: 2rem;
+      cursor: pointer;
+
+      img {
+        object-fit: cover;
+      }
     }
   }
 }
 
+// !WELCOME SCREEN WITH BUTTON
 #matrixCanvas {
   position: absolute;
   top: 0;
