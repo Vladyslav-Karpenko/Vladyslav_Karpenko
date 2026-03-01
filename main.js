@@ -134,9 +134,10 @@ enterBtn.addEventListener("click", () => {
 });
 
 
-
 const header = document.querySelector('#header');
 if (header) {
+
+
     fetch('header.html')
         .then(response => response.text())
         .then(html => {
